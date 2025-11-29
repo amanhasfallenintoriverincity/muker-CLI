@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "muker"
+version = "0.1.0"
+description = "A feature-rich CLI music player with real-time visualizer"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "muker"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+textual = "^0.47.0"
+miniaudio = "^1.59"
+numpy = "^1.26.0"
+mutagen = "^1.47.0"
+aiofiles = "^23.2.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-asyncio = "^0.21.0"
+black = "^23.0.0"
+mypy = "^1.7.0"
+
+[tool.poetry.scripts]
+muker = "muker.__main__:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ['py310']
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false

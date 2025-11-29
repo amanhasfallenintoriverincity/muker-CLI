@@ -1,0 +1,152 @@
+/* Muker CLI Music Player Styles */
+
+Screen {
+    background: #1a1a2e;
+}
+
+MainScreen {
+    background: #1a1a2e;
+}
+
+#main-container {
+    layout: vertical;
+    height: 100%;
+    width: 100%;
+    background: #1a1a2e;
+}
+
+/* Visualizer Area (30%) */
+#visualizer-container {
+    height: 30%;
+    border: double cyan;
+    background: #0d1117;
+    padding: 1;
+}
+
+VisualizerWidget {
+    height: 100%;
+    width: 100%;
+    content-align: center middle;
+    text-style: bold;
+    background: #0d1117;
+    color: cyan;
+}
+
+/* Content Area (50%) */
+#content-container {
+    height: 50%;
+    layout: horizontal;
+}
+
+#library-panel {
+    width: 40%;
+    border: solid green;
+    background: #0d1117;
+    padding: 1;
+}
+
+LibraryBrowser {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    background: #0d1117;
+    color: white;
+}
+
+#playlist-panel {
+    width: 60%;
+    border: solid yellow;
+    background: #0d1117;
+    padding: 1;
+}
+
+#playlist {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+#playlist-title {
+    text-style: bold;
+    color: $warning;
+    margin-bottom: 1;
+}
+
+#playlist-list {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+PlaylistView {
+    height: 100%;
+    width: 100%;
+    background: #0d1117;
+}
+
+#playlist-title {
+    text-style: bold;
+    color: yellow;
+    background: #0d1117;
+    margin-bottom: 1;
+}
+
+ListView {
+    height: 100%;
+    width: 100%;
+    background: #0d1117;
+    border: none;
+}
+
+ListView > ListItem {
+    padding: 0 1;
+    background: #0d1117;
+    color: white;
+}
+
+ListView > ListItem:hover {
+    background: $primary-darken-1;
+}
+
+ListView > ListItem.-selected {
+    background: $primary-darken-2;
+}
+
+ListView:focus > ListItem.-selected {
+    background: $primary;
+}
+
+/* Controls Area (20%) */
+#controls-container {
+    height: 20%;
+    border: heavy magenta;
+    background: #0d1117;
+    padding: 1;
+}
+
+PlayerControls {
+    height: 100%;
+    width: 100%;
+    content-align: center middle;
+    text-align: center;
+    background: #0d1117;
+    color: white;
+}
+
+/* Header and Footer */
+Header {
+    background: $primary-darken-2;
+}
+
+Footer {
+    background: $primary-darken-2;
+}
+
+/* Color overrides for better visibility */
+Screen.-dark-mode {
+    background: #0a0e1a;
+}
+
+Screen.-light-mode {
+    background: #f0f0f0;
+}
