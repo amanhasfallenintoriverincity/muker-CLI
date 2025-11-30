@@ -22,6 +22,8 @@ class Track:
     channels: Optional[int] = None  # 1=mono, 2=stereo
     spotify_track_id: Optional[str] = None  # Spotify track ID for lyrics
     lyrics: Optional[dict] = None  # Lyrics data from Spotify
+    genius_song_id: Optional[int] = None  # Genius song ID
+    annotations: Optional[list] = None  # Genius annotations
 
     @classmethod
     def from_dict(cls, data: dict) -> 'Track':
@@ -46,7 +48,9 @@ class Track:
             sample_rate=data.get('sample_rate'),
             channels=data.get('channels'),
             spotify_track_id=data.get('spotify_track_id'),
-            lyrics=data.get('lyrics')
+            lyrics=data.get('lyrics'),
+            genius_song_id=data.get('genius_song_id'),
+            annotations=data.get('annotations')
         )
 
     def to_dict(self) -> dict:
@@ -68,7 +72,9 @@ class Track:
             'sample_rate': self.sample_rate,
             'channels': self.channels,
             'spotify_track_id': self.spotify_track_id,
-            'lyrics': self.lyrics
+            'lyrics': self.lyrics,
+            'genius_song_id': self.genius_song_id,
+            'annotations': self.annotations
         }
 
     @property

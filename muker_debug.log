@@ -37,6 +37,7 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 [DEBUG] Creating PlaylistView...
 [DEBUG] PlaylistView created
 [DEBUG] Creating LyricsPanel...
+[INFO] Genius API client initialized successfully
 [DEBUG] LyricsPanel created
 [DEBUG] Creating PlayerControls...
 [DEBUG] PlayerControls created
@@ -55,6 +56,7 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 [DEBUG] Forcing playlist view update
 [DEBUG] First track: Toxic
 [DEBUG] Loading first track: C:\Users\admin\Music\Toxic.flac
+[DEBUG] Searching Genius for: Toxic by BoyWithUke
 [DEBUG-LYRICS-API] Raw response: {'error': False, 'syncType': 'LINE_SYNCED', 'lines': [{'timeTag': '00:00.27', 'words': 'All my friends are toxic, all ambitionless'}, {'timeTag': '00:03.21', 'words': 'So rude and always negative'}, {'timeTag': '00:06.15', 'words': "I need new friends, but it's not that quick and easy"}, {'timeTag': '00:09.59', 'words': "Oh, I'm drowning, let me breathe"}, {'timeTag': '00:12.13', 'words': "I'm better off all by myself"}, {'timeTag': '00:14.59', 'words': "Though I'm feeling kinda empty without somebody else"}, {'timeTag': '00:17.05', 'words': 'Oh, I hear you crying out for help'}, {'timeTag': '00:19.86', 'words': 'But you never showed for me when I was ringing your cellphone'}, {'timeTag': '00:23.01', 'words': "Oh, you don't know how it feels to be alone"}, {'timeTag': '00:27.08', 'words': "Baby, oh, I'll make you know, I'll make you know, oh"}, {'timeTag': '00:33.91', 'words': '♪'}, {'timeTag': '00:36.67', 'words': "I'm drowning, let me breathe"}, {'timeTag': '00:41.99', 'words': "I'm drowning, let me breathe"}, {'timeTag': '00:47.31', 'words': "I'm drowning, let me breathe"}, {'timeTag': '00:52.70', 'words': "I'm drowning, let me breathe"}, {'timeTag': '00:54.82', 'words': "But life is immaculate, backin' it up a bit"}, {'timeTag': '00:57.69', 'words': "Countin' my hours and knocking on wood"}, {'timeTag': '01:00.16', 'words': "Avoiding my opposites, chewin' on chocolate"}, {'timeTag': '01:02.92', 'words': 'Had a bit limited time, but I should'}, {'timeTag': '01:05.44', 'words': "Be good for a minute, don't want to admit it"}, {'timeTag': '01:08.06', 'words': "I'm running on seconds, I'm rigid, I'm screwed"}, {'timeTag': '01:10.60', 'words': "Don't know what to do, I'm thinking of you"}, {'timeTag': '01:13.31', 'words': "I'm drinking up bottles and bottles of booze"}, {'timeTag': '01:16.05', 'words': "I'm better off all by myself"}, {'timeTag': '01:18.60', 'words': "Though I'm feeling kinda empty without somebody else"}, {'timeTag': '01:21.34', 'words': 'Oh, I hear you crying out for help'}, {'timeTag': '01:23.82', 'words': 'But you never showed for me when I was ringing your cellphone'}, {'timeTag': '01:27.07', 'words': "Oh, you don't know how it feels to be alone"}, {'timeTag': '01:30.91', 'words': "Baby, oh, I'll make you know, I'll make you know, oh"}, {'timeTag': '01:37.33', 'words': 'I fell into your river'}, {'timeTag': '01:39.92', 'words': "That's where you told me lies"}, {'timeTag': '01:42.63', 'words': "You said that I'd feel better"}, {'timeTag': '01:44.91', 'words': 'But this is where good guys die'}, {'timeTag': '01:47.74', 'words': 'You took my pride away, but'}, {'timeTag': '01:50.38', 'words': 'You cannot take my light'}, {'timeTag': '01:53.10', 'words': "I'll find another way"}, {'timeTag': '01:55.58', 'words': "But now you're takin' my light"}, {'timeTag': '01:58.38', 'words': "Don't you see how I"}, {'timeTag': '02:01.45', 'words': "I'm better off all by myself"}, {'timeTag': '02:03.84', 'words': "Though I'm feeling kinda empty without somebody else"}, {'timeTag': '02:06.69', 'words': 'Oh, I hear you crying out for help'}, {'timeTag': '02:09.34', 'words': 'But you never showed for me when I was ringing your cellphone'}, {'timeTag': '02:12.11', 'words': "Oh, you don't know how it feels to be alone"}, {'timeTag': '02:16.39', 'words': "Baby, oh, I'll make you know, I'll make you know, oh"}, {'timeTag': '02:22.85', 'words': "I'm better off all by myself"}, {'timeTag': '02:25.22', 'words': "Though I'm feeling kinda empty without somebody else"}, {'timeTag': '02:27.92', 'words': 'Oh, I hear you crying out for help'}, {'timeTag': '02:30.65', 'words': "But you never showed for me when I was ringin' your cellphone"}, {'timeTag': '02:33.68', 'words': "Oh, you don't know how it feels to be alone"}, {'timeTag': '02:37.54', 'words': "Baby, oh, I'll make you know, I'll make you know, oh"}, {'timeTag': '02:40.77', 'words': ''}]}
 [INFO] Fetched lyrics for track 2gQPv5jvVPqU2a9HhMNO1v (format: lrc)
 [DEBUG] Loading track: C:\Users\admin\Music\Toxic.flac
@@ -62,195 +64,87 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 [DEBUG] Stream info - channels: 2, sample_rate: 44100
 [DEBUG] Starting playback of Toxic
 [DEBUG] Playback thread started
-[DEBUG] Playback thread launched
 [DEBUG] Loading file with pygame.mixer: C:\Users\admin\Music\Toxic.flac
+[DEBUG] Playback thread launched
 [DEBUG] pygame.mixer playback started - volume: 20%
 [DEBUG] Visualizer samples ready - shape: (7409682, 2)
-[DEBUG-LYRICS-PANEL] Position: 0.57s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 0.60s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 0.73s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 0.86s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 0.96s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 1.03s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 1.14s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 1.24s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 1.36s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 1.43s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 1.54s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 1.65s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 1.79s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 1.86s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 1.96s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 2.06s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 2.13s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 2.24s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 2.33s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 2.48s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 2.56s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 2.65s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 2.79s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 2.86s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 3.00s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 3.07s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 3.14s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 3.26s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 3.33s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 3.43s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 3.56s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 3.66s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 3.79s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 3.87s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 3.98s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 4.05s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 4.15s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 4.25s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 4.34s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 4.44s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 4.44s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 4.47s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 4.47s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 4.59s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 4.66s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 4.79s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 4.85s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 4.96s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 5.06s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 5.14s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 5.23s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 5.33s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 5.47s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 5.53s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 5.63s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 5.76s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 5.83s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 5.93s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 6.04s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 6.16s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 6.26s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 6.33s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 6.42s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 6.57s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 6.67s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 6.75s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 6.85s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 6.99s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 7.08s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 7.19s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 7.26s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 7.39s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 7.47s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 7.56s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 7.67s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 7.76s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 7.83s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 7.93s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 8.07s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 8.13s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 8.24s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 8.34s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 8.46s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 8.57s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 8.64s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 8.76s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 8.84s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 9.01s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 9.04s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 9.15s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 9.27s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 9.34s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 9.46s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 9.54s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 9.66s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 9.76s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 9.85s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 9.92s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 10.06s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 10.17s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 10.27s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 10.33s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 10.47s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 10.54s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 10.64s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 10.76s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 10.87s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 10.94s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 11.06s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 11.13s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 11.26s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 11.36s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 11.47s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 11.54s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 11.66s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 11.73s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 11.87s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 11.96s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 12.03s, Current Line Index: 3
-[DEBUG-LYRICS-PANEL] Position: 12.13s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 12.26s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 12.37s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 12.44s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 12.53s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 12.66s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 12.77s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 12.84s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 12.96s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 13.06s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 13.14s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 13.26s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 13.37s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 13.44s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 13.54s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 13.67s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 13.77s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 13.84s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 13.95s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 14.08s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 14.17s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 14.26s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 14.33s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 14.44s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 14.53s, Current Line Index: 4
-[DEBUG-LYRICS-PANEL] Position: 14.63s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 14.77s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 14.86s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 14.97s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 15.04s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 15.14s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 15.26s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 15.37s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 15.44s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 15.57s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 15.64s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 15.77s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 15.83s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 15.93s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 16.07s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 16.14s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 16.26s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 16.34s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 16.44s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 16.57s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 16.67s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 16.74s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 16.83s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 16.97s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 17.05s, Current Line Index: 5
-[DEBUG-LYRICS-PANEL] Position: 17.15s, Current Line Index: 6
-[DEBUG] on_playlist_view_track_selected called
-[DEBUG] Selected track: Blind - Unknown Artist
-[DEBUG] Stopping playback
-[DEBUG] Playback completed!
-[DEBUG] Loading track: C:\Users\admin\Music\Blind.mp3
-[DEBUG] Track loaded successfully. Duration: 62.30s
-[DEBUG] Stream info - channels: 2, sample_rate: 44100
-[DEBUG] Starting playback of Blind
-[DEBUG] Playback thread started
-[DEBUG] Loading file with pygame.mixer: C:\Users\admin\Music\Blind.mp3
-[DEBUG] Playback thread launched
-[DEBUG] pygame.mixer playback started - volume: 20%
-[DEBUG] Visualizer samples ready - shape: (2747520, 2)
+[DEBUG] Lyrics loaded. Synced: True, Lines: 0
+[DEBUG] Pos: 0.02, ActiveIdx: -1
+[DEBUG] Searching Genius for: Toxic by BoyWithUke
+[DEBUG] Pos: 0.58, ActiveIdx: 0
+[DEBUG] Set active line 0: frozenset({'active'})
+[DEBUG] Pos: 0.70, ActiveIdx: 0
+[DEBUG] Pos: 0.80, ActiveIdx: 0
+[DEBUG] Pos: 0.90, ActiveIdx: 0
+[DEBUG] Pos: 0.99, ActiveIdx: 0
+[DEBUG] Pos: 1.10, ActiveIdx: 0
+[DEBUG] Pos: 1.20, ActiveIdx: 0
+[DEBUG] Pos: 1.35, ActiveIdx: 0
+[DEBUG] Pos: 1.38, ActiveIdx: 0
+[DEBUG] Pos: 1.48, ActiveIdx: 0
+[DEBUG] Pos: 1.58, ActiveIdx: 0
+[DEBUG] Pos: 1.67, ActiveIdx: 0
+[DEBUG] Song object type: <class 'lyricsgenius.types.song.Song'>
+[INFO] Found Genius song ID: 7104629
+[DEBUG] Pos: 1.79, ActiveIdx: 0
+[DEBUG] Pos: 1.89, ActiveIdx: 0
+[DEBUG] Pos: 1.98, ActiveIdx: 0
+[DEBUG] Pos: 2.14, ActiveIdx: 0
+[DEBUG] Pos: 2.18, ActiveIdx: 0
+[DEBUG] Pos: 2.30, ActiveIdx: 0
+[DEBUG] Pos: 2.40, ActiveIdx: 0
+[INFO] Fetched 10 annotations for Toxic
+[DEBUG] Pos: 2.51, ActiveIdx: 0
+[DEBUG] Pos: 2.61, ActiveIdx: 0
+[DEBUG] Pos: 2.70, ActiveIdx: 0
+[DEBUG] Pos: 2.80, ActiveIdx: 0
+[DEBUG] Song object type: <class 'lyricsgenius.types.song.Song'>
+[INFO] Found Genius song ID: 7104629
+[DEBUG] Pos: 2.90, ActiveIdx: 0
+[DEBUG] Pos: 2.98, ActiveIdx: 0
+[DEBUG] Pos: 3.08, ActiveIdx: 0
+[DEBUG] Pos: 3.21, ActiveIdx: 1
+[DEBUG] Set active line 1: frozenset({'active'})
+[DEBUG] Pos: 3.27, ActiveIdx: 1
+[DEBUG] Pos: 3.38, ActiveIdx: 1
+[DEBUG] Pos: 3.48, ActiveIdx: 1
+[DEBUG] Pos: 3.57, ActiveIdx: 1
+[DEBUG] Pos: 3.68, ActiveIdx: 1
+[DEBUG] Pos: 3.84, ActiveIdx: 1
+[DEBUG] Pos: 3.90, ActiveIdx: 1
+[DEBUG] Pos: 4.00, ActiveIdx: 1
+[DEBUG] Pos: 4.11, ActiveIdx: 1
+[DEBUG] Pos: 4.20, ActiveIdx: 1
+[INFO] Fetched 10 annotations for Toxic
+[DEBUG] Pos: 4.30, ActiveIdx: 1
+[DEBUG] Pos: 4.40, ActiveIdx: 1
+[DEBUG] Pos: 4.51, ActiveIdx: 1
+[DEBUG] Pos: 4.60, ActiveIdx: 1
+[DEBUG] Pos: 4.68, ActiveIdx: 1
+[DEBUG] Pos: 4.82, ActiveIdx: 1
+[DEBUG] Pos: 4.87, ActiveIdx: 1
+[DEBUG] Pos: 4.97, ActiveIdx: 1
+[DEBUG] Pos: 5.08, ActiveIdx: 1
+[DEBUG] Pos: 5.18, ActiveIdx: 1
+[DEBUG] Pos: 5.30, ActiveIdx: 1
+[DEBUG] Pos: 5.40, ActiveIdx: 1
+[DEBUG] Pos: 5.52, ActiveIdx: 1
+[DEBUG] Pos: 5.59, ActiveIdx: 1
+[DEBUG] Pos: 5.71, ActiveIdx: 1
+[DEBUG] Pos: 5.81, ActiveIdx: 1
+[DEBUG] Pos: 5.90, ActiveIdx: 1
+[DEBUG] Pos: 6.00, ActiveIdx: 1
+[DEBUG] Pos: 6.11, ActiveIdx: 1
+[DEBUG] Pos: 6.20, ActiveIdx: 2
+[DEBUG] Set active line 2: frozenset({'active'})
+[DEBUG] Pos: 6.30, ActiveIdx: 2
+[DEBUG] Pos: 6.42, ActiveIdx: 2
+[DEBUG] Pos: 6.48, ActiveIdx: 2
+[DEBUG] Pos: 6.58, ActiveIdx: 2
+[DEBUG] Pos: 6.68, ActiveIdx: 2
 [DEBUG] on_playlist_view_track_selected called
 [DEBUG] Selected track: Blinding Lights - The Weeknd
+[DEBUG] Searching Genius for: Blinding Lights by The Weeknd
 [DEBUG-LYRICS-API] Raw response: {'error': False, 'syncType': 'LINE_SYNCED', 'lines': [{'timeTag': '00:13.34', 'words': 'Yeah'}, {'timeTag': '00:15.72', 'words': '♪'}, {'timeTag': '00:26.90', 'words': "I've been tryna call"}, {'timeTag': '00:29.68', 'words': "I've been on my own for long enough"}, {'timeTag': '00:32.64', 'words': 'Maybe you can show me how to love, maybe'}, {'timeTag': '00:38.19', 'words': "I'm goin' through withdrawals"}, {'timeTag': '00:40.83', 'words': "You don't even have to do too much"}, {'timeTag': '00:43.88', 'words': 'You can turn me on with just a touch, baby'}, {'timeTag': '00:49.31', 'words': 'I look around and'}, {'timeTag': '00:50.56', 'words': "Sin City's cold and empty (oh)"}, {'timeTag': '00:53.45', 'words': "No one's around to judge me (oh)"}, {'timeTag': '00:56.16', 'words': "I can't see clearly when you're gone"}, {'timeTag': '01:00.72', 'words': "I said, ooh, I'm blinded by the lights"}, {'timeTag': '01:06.55', 'words': "No, I can't sleep until I feel your touch"}, {'timeTag': '01:11.73', 'words': "I said, ooh, I'm drowning in the night"}, {'timeTag': '01:17.82', 'words': "Oh, when I'm like this, you're the one I trust"}, {'timeTag': '01:22.04', 'words': '(Hey, hey, hey)'}, {'timeTag': '01:25.95', 'words': '♪'}, {'timeTag': '01:34.30', 'words': "I'm running out of time"}, {'timeTag': '01:37.10', 'words': "'Cause I can see the sun light up the sky"}, {'timeTag': '01:40.01', 'words': 'So I hit the road in overdrive, baby, oh'}, {'timeTag': '01:46.82', 'words': "The city's cold and empty (oh)"}, {'timeTag': '01:49.63', 'words': "No one's around to judge me (oh)"}, {'timeTag': '01:52.29', 'words': "I can't see clearly when you're gone"}, {'timeTag': '01:56.98', 'words': "I said, ooh, I'm blinded by the lights"}, {'timeTag': '02:02.87', 'words': "No, I can't sleep until I feel your touch"}, {'timeTag': '02:08.05', 'words': "I said, ooh, I'm drowning in the night"}, {'timeTag': '02:13.80', 'words': "Oh, when I'm like this, you're the one I trust"}, {'timeTag': '02:19.33', 'words': "I'm just walking by to let you know (by to let you know)"}, {'timeTag': '02:22.15', 'words': 'I could never say it on the phone (say it on the phone)'}, {'timeTag': '02:25.36', 'words': 'Will never let you go this time (ooh)'}, {'timeTag': '02:30.49', 'words': "I said, ooh, I'm blinded by the lights"}, {'timeTag': '02:36.49', 'words': "No, I can't sleep until I feel your touch"}, {'timeTag': '02:40.81', 'words': '(Hey, hey, hey)'}, {'timeTag': '02:44.83', 'words': '♪'}, {'timeTag': '02:51.99', 'words': '(Hey, hey, hey)'}, {'timeTag': '02:56.05', 'words': '♪'}, {'timeTag': '03:03.76', 'words': "I said, ooh, I'm blinded by the lights"}, {'timeTag': '03:09.94', 'words': "No, I can't sleep until I feel your touch"}, {'timeTag': '03:13.68', 'words': ''}]}
 [INFO] Fetched lyrics for track 6qYkmqFsXbj8CQjAdbYz07 (format: lrc)
 [DEBUG] Stopping playback
@@ -263,321 +157,237 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 [DEBUG] Playback thread launched
 [DEBUG] Loading file with pygame.mixer: C:\Users\admin\Music\Blind.flac
 [DEBUG] pygame.mixer playback started - volume: 20%
-[DEBUG] on_playlist_view_track_selected called
-[DEBUG] Selected track: Blinding Lights - The Weeknd
-[DEBUG] Stopping playback
+[DEBUG] Lyrics loaded. Synced: True, Lines: 0
+[DEBUG] Pos: 0.00, ActiveIdx: -1
 [DEBUG] Visualizer samples ready - shape: (8941008, 2)
-[DEBUG] Playback completed!
-[DEBUG] Loading track: C:\Users\admin\Music\Blind.flac
-[DEBUG] Track loaded successfully. Duration: 200.04s
-[DEBUG] Stream info - channels: 2, sample_rate: 44100
-[DEBUG] Starting playback of Blinding Lights
-[DEBUG] Playback thread started
-[DEBUG] Playback thread launched
-[DEBUG] Loading file with pygame.mixer: C:\Users\admin\Music\Blind.flac
-[DEBUG] pygame.mixer playback started - volume: 20%
-[DEBUG-LYRICS-PANEL] Position: 0.00s, Current Line Index: -1
-[DEBUG] Visualizer samples ready - shape: (8941008, 2)
-[DEBUG-LYRICS-PANEL] Position: 0.24s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 0.34s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 0.46s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 0.55s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 0.64s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 0.74s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 0.86s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 0.96s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 1.03s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 1.16s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 1.26s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 1.33s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 1.46s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 1.55s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 1.59s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 1.76s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 1.83s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 1.97s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 2.03s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 2.13s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 2.23s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 2.36s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 2.44s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 2.55s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 2.69s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 2.76s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 2.89s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 2.95s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 3.06s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 3.15s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 3.25s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 3.35s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 3.45s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 3.55s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 3.67s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 3.76s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 3.85s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 3.95s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 4.06s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 4.16s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 4.25s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 4.35s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 4.47s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 4.56s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 4.66s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 4.73s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 4.83s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 4.96s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 5.05s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 5.15s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 5.25s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 5.35s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 5.45s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 5.55s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 5.64s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 5.77s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 5.86s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 5.95s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 6.05s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 6.14s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 6.27s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 6.36s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 6.45s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 6.55s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 6.65s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 6.75s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 6.85s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 6.95s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 7.04s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 7.17s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 7.25s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 7.35s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 7.45s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 7.56s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 7.65s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 7.75s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 7.85s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 7.95s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 8.04s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 8.14s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 8.27s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 8.36s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 8.46s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 8.55s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 8.65s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 8.75s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 8.85s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 8.96s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 9.06s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 9.16s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 9.25s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 9.34s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 9.47s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 9.55s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 9.65s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 9.76s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 9.85s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 9.95s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 10.05s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 10.13s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 10.27s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 10.36s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 10.46s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 10.55s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 10.64s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 10.74s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 10.82s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 10.95s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 11.05s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 11.15s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 11.25s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 11.35s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 11.45s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 11.55s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 11.65s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 11.76s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 11.85s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 11.95s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 12.05s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 12.14s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 12.25s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 12.35s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 12.45s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 12.55s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 12.65s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 12.75s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 12.85s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 12.95s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 13.05s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 13.15s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 13.25s, Current Line Index: -1
-[DEBUG-LYRICS-PANEL] Position: 13.35s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 13.45s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 13.55s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 13.65s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 13.75s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 13.85s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 13.95s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.05s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.15s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.25s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.35s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.45s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.55s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.65s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.75s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 13.66s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 13.76s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 13.86s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 13.96s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.05s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.16s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.26s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.36s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.45s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.56s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.66s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.76s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.86s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 14.96s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 15.06s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 15.16s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 15.26s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 15.35s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 15.46s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 15.56s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 15.65s, Current Line Index: 0
-[DEBUG-LYRICS-PANEL] Position: 15.76s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 15.86s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 15.96s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 16.05s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 16.16s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 16.26s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 16.35s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 16.46s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 16.56s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 16.65s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 16.76s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 16.86s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 16.95s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 17.06s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 17.16s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 17.26s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 17.35s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 17.46s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 17.56s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 17.66s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 17.76s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 17.86s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 17.95s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 18.06s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 18.16s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 18.25s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 18.36s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 18.46s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 18.56s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 18.65s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 18.76s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 18.86s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 18.93s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 19.06s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 19.16s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 19.25s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 19.36s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 19.46s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 19.55s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 19.66s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 19.76s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 19.86s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 19.95s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 20.06s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 20.16s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 20.26s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 20.36s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 20.46s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 20.55s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 20.66s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 20.76s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 20.86s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 20.96s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 21.06s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 21.15s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 21.25s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 21.36s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 21.46s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 21.56s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 21.66s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 21.75s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 21.86s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 21.96s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 22.06s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 22.15s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 22.26s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 22.36s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 22.45s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 22.55s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 22.66s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 22.75s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 22.86s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 22.96s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 23.05s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 23.16s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 23.26s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 23.36s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 23.45s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 23.56s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 23.66s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 23.75s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 23.86s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 23.96s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 24.06s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 24.18s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 24.25s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 24.34s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 24.43s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 24.54s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 24.66s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 24.75s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 24.85s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 24.94s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 25.03s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 25.16s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 25.26s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 25.36s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 25.46s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 25.56s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 25.65s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 25.76s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 25.86s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 25.96s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 26.05s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 26.16s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 26.26s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 26.38s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 26.46s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 26.57s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 26.66s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 26.77s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 26.87s, Current Line Index: 1
-[DEBUG-LYRICS-PANEL] Position: 26.96s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 27.07s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 27.17s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 27.26s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 27.37s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 27.47s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 27.57s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 27.66s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 27.77s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 27.85s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 27.96s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 28.06s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 28.17s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 28.31s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 28.35s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 28.48s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 28.57s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 28.67s, Current Line Index: 2
-[DEBUG-LYRICS-PANEL] Position: 28.75s, Current Line Index: 2
-[DEBUG] Key pressed: escape
-[DEBUG] Cleaning up player resources
-[DEBUG] Stopping playback
-[DEBUG] Playback completed!
-[DEBUG] app.run() returned normally
+[DEBUG] Searching Genius for: Blinding Lights by The Weeknd
+[DEBUG] Pos: 0.53, ActiveIdx: -1
+[DEBUG] Pos: 0.67, ActiveIdx: -1
+[DEBUG] Pos: 0.77, ActiveIdx: -1
+[DEBUG] Pos: 0.85, ActiveIdx: -1
+[DEBUG] Pos: 0.98, ActiveIdx: -1
+[DEBUG] Pos: 1.08, ActiveIdx: -1
+[DEBUG] Pos: 1.18, ActiveIdx: -1
+[DEBUG] Pos: 1.28, ActiveIdx: -1
+[DEBUG] Song object type: <class 'lyricsgenius.types.song.Song'>
+[INFO] Found Genius song ID: 5049949
+[DEBUG] Pos: 1.40, ActiveIdx: -1
+[DEBUG] Pos: 1.48, ActiveIdx: -1
+[DEBUG] Pos: 1.57, ActiveIdx: -1
+[DEBUG] Pos: 1.68, ActiveIdx: -1
+[DEBUG] Pos: 1.78, ActiveIdx: -1
+[DEBUG] Pos: 1.88, ActiveIdx: -1
+[DEBUG] Pos: 1.98, ActiveIdx: -1
+[DEBUG] Song object type: <class 'lyricsgenius.types.song.Song'>
+[INFO] Found Genius song ID: 5049949
+[DEBUG] Pos: 2.09, ActiveIdx: -1
+[DEBUG] Pos: 2.17, ActiveIdx: -1
+[DEBUG] Pos: 2.28, ActiveIdx: -1
+[INFO] Fetched 10 annotations for Blinding Lights
+[DEBUG] Pos: 2.37, ActiveIdx: -1
+[DEBUG] Pos: 2.48, ActiveIdx: -1
+[DEBUG] Pos: 2.58, ActiveIdx: -1
+[INFO] Fetched 10 annotations for Blinding Lights
+[DEBUG] Pos: 2.67, ActiveIdx: -1
+[DEBUG] Pos: 2.77, ActiveIdx: -1
+[DEBUG] Pos: 2.94, ActiveIdx: -1
+[DEBUG] Pos: 2.98, ActiveIdx: -1
+[DEBUG] Pos: 3.08, ActiveIdx: -1
+[DEBUG] Pos: 3.16, ActiveIdx: -1
+[DEBUG] Pos: 3.25, ActiveIdx: -1
+[DEBUG] Pos: 3.35, ActiveIdx: -1
+[DEBUG] Pos: 3.48, ActiveIdx: -1
+[DEBUG] Pos: 3.57, ActiveIdx: -1
+[DEBUG] Pos: 3.68, ActiveIdx: -1
+[DEBUG] Pos: 3.80, ActiveIdx: -1
+[DEBUG] Pos: 3.86, ActiveIdx: -1
+[DEBUG] Pos: 3.95, ActiveIdx: -1
+[DEBUG] Pos: 4.08, ActiveIdx: -1
+[DEBUG] Pos: 4.17, ActiveIdx: -1
+[DEBUG] Pos: 4.28, ActiveIdx: -1
+[DEBUG] Pos: 4.39, ActiveIdx: -1
+[DEBUG] Pos: 4.46, ActiveIdx: -1
+[DEBUG] Pos: 4.57, ActiveIdx: -1
+[DEBUG] Pos: 4.70, ActiveIdx: -1
+[DEBUG] Pos: 4.76, ActiveIdx: -1
+[DEBUG] Pos: 4.80, ActiveIdx: -1
+[DEBUG] Pos: 4.96, ActiveIdx: -1
+[DEBUG] Pos: 5.06, ActiveIdx: -1
+[DEBUG] Pos: 5.15, ActiveIdx: -1
+[DEBUG] Pos: 5.25, ActiveIdx: -1
+[DEBUG] Pos: 5.36, ActiveIdx: -1
+[DEBUG] Pos: 5.45, ActiveIdx: -1
+[DEBUG] Pos: 5.55, ActiveIdx: -1
+[DEBUG] Pos: 5.72, ActiveIdx: -1
+[DEBUG] Pos: 5.75, ActiveIdx: -1
+[DEBUG] Pos: 5.85, ActiveIdx: -1
+[DEBUG] Pos: 5.96, ActiveIdx: -1
+[DEBUG] Pos: 6.05, ActiveIdx: -1
+[DEBUG] Pos: 6.17, ActiveIdx: -1
+[DEBUG] Pos: 6.26, ActiveIdx: -1
+[DEBUG] Pos: 6.35, ActiveIdx: -1
+[DEBUG] Pos: 6.45, ActiveIdx: -1
+[DEBUG] Pos: 6.56, ActiveIdx: -1
+[DEBUG] Pos: 6.66, ActiveIdx: -1
+[DEBUG] Pos: 6.77, ActiveIdx: -1
+[DEBUG] Pos: 6.86, ActiveIdx: -1
+[DEBUG] Pos: 6.98, ActiveIdx: -1
+[DEBUG] Pos: 7.07, ActiveIdx: -1
+[DEBUG] Pos: 7.19, ActiveIdx: -1
+[DEBUG] Pos: 7.29, ActiveIdx: -1
+[DEBUG] Pos: 7.38, ActiveIdx: -1
+[DEBUG] Pos: 7.47, ActiveIdx: -1
+[DEBUG] Pos: 7.58, ActiveIdx: -1
+[DEBUG] Pos: 7.67, ActiveIdx: -1
+[DEBUG] Pos: 7.78, ActiveIdx: -1
+[DEBUG] Pos: 7.94, ActiveIdx: -1
+[DEBUG] Pos: 7.98, ActiveIdx: -1
+[DEBUG] Pos: 8.08, ActiveIdx: -1
+[DEBUG] Pos: 8.19, ActiveIdx: -1
+[DEBUG] Pos: 8.28, ActiveIdx: -1
+[DEBUG] Pos: 8.38, ActiveIdx: -1
+[DEBUG] Pos: 8.48, ActiveIdx: -1
+[DEBUG] Pos: 8.58, ActiveIdx: -1
+[DEBUG] Pos: 8.68, ActiveIdx: -1
+[DEBUG] Pos: 8.82, ActiveIdx: -1
+[DEBUG] Pos: 8.89, ActiveIdx: -1
+[DEBUG] Pos: 8.95, ActiveIdx: -1
+[DEBUG] Pos: 9.06, ActiveIdx: -1
+[DEBUG] Pos: 9.20, ActiveIdx: -1
+[DEBUG] Pos: 9.26, ActiveIdx: -1
+[DEBUG] Pos: 9.35, ActiveIdx: -1
+[DEBUG] Pos: 9.49, ActiveIdx: -1
+[DEBUG] Pos: 9.59, ActiveIdx: -1
+[DEBUG] Pos: 9.68, ActiveIdx: -1
+[DEBUG] Pos: 9.78, ActiveIdx: -1
+[DEBUG] Pos: 9.88, ActiveIdx: -1
+[DEBUG] Pos: 9.96, ActiveIdx: -1
+[DEBUG] Pos: 10.09, ActiveIdx: -1
+[DEBUG] Pos: 10.20, ActiveIdx: -1
+[DEBUG] Pos: 10.26, ActiveIdx: -1
+[DEBUG] Pos: 10.43, ActiveIdx: -1
+[DEBUG] Pos: 10.47, ActiveIdx: -1
+[DEBUG] Pos: 10.59, ActiveIdx: -1
+[DEBUG] Pos: 10.68, ActiveIdx: -1
+[DEBUG] Pos: 10.78, ActiveIdx: -1
+[DEBUG] Pos: 10.88, ActiveIdx: -1
+[DEBUG] Pos: 10.98, ActiveIdx: -1
+[DEBUG] Pos: 11.08, ActiveIdx: -1
+[DEBUG] Pos: 11.18, ActiveIdx: -1
+[DEBUG] Pos: 11.32, ActiveIdx: -1
+[DEBUG] Pos: 11.36, ActiveIdx: -1
+[DEBUG] Pos: 11.48, ActiveIdx: -1
+[DEBUG] Pos: 11.57, ActiveIdx: -1
+[DEBUG] Pos: 11.66, ActiveIdx: -1
+[DEBUG] Pos: 11.76, ActiveIdx: -1
+[DEBUG] Pos: 11.85, ActiveIdx: -1
+[DEBUG] Pos: 11.98, ActiveIdx: -1
+[DEBUG] Pos: 12.15, ActiveIdx: -1
+[DEBUG] Pos: 12.17, ActiveIdx: -1
+[DEBUG] Pos: 12.28, ActiveIdx: -1
+[DEBUG] Pos: 12.38, ActiveIdx: -1
+[DEBUG] Pos: 12.47, ActiveIdx: -1
+[DEBUG] Pos: 12.58, ActiveIdx: -1
+[DEBUG] Pos: 12.68, ActiveIdx: -1
+[DEBUG] Pos: 12.78, ActiveIdx: -1
+[DEBUG] Pos: 12.88, ActiveIdx: -1
+[DEBUG] Pos: 12.98, ActiveIdx: -1
+[DEBUG] Pos: 13.08, ActiveIdx: -1
+[DEBUG] Pos: 13.18, ActiveIdx: -1
+[DEBUG] Pos: 13.24, ActiveIdx: -1
+[DEBUG] Pos: 13.38, ActiveIdx: 0
+[DEBUG] Set active line 0: frozenset({'active'})
+[DEBUG] Pos: 13.47, ActiveIdx: 0
+[DEBUG] Pos: 13.57, ActiveIdx: 0
+[DEBUG] Pos: 13.68, ActiveIdx: 0
+[DEBUG] Pos: 13.78, ActiveIdx: 0
+[DEBUG] Pos: 13.88, ActiveIdx: 0
+[DEBUG] Pos: 13.98, ActiveIdx: 0
+[DEBUG] Pos: 14.08, ActiveIdx: 0
+[DEBUG] Pos: 14.18, ActiveIdx: 0
+[DEBUG] Pos: 14.28, ActiveIdx: 0
+[DEBUG] Pos: 14.38, ActiveIdx: 0
+[DEBUG] Pos: 14.48, ActiveIdx: 0
+[DEBUG] Pos: 14.72, ActiveIdx: 0
+[DEBUG] Pos: 14.91, ActiveIdx: 0
+[DEBUG] Pos: 14.97, ActiveIdx: 0
+[DEBUG] Pos: 15.05, ActiveIdx: 0
+[DEBUG] Pos: 15.18, ActiveIdx: 0
+[DEBUG] Pos: 15.28, ActiveIdx: 0
+[DEBUG] Pos: 15.42, ActiveIdx: 0
+[DEBUG] Pos: 15.48, ActiveIdx: 0
+[DEBUG] Pos: 15.58, ActiveIdx: 0
+[DEBUG] Pos: 15.68, ActiveIdx: 0
+[DEBUG] Pos: 15.78, ActiveIdx: 1
+[DEBUG] Set active line 1: frozenset({'active'})
+[DEBUG] Pos: 15.88, ActiveIdx: 1
+[DEBUG] Pos: 15.98, ActiveIdx: 1
+[DEBUG] Pos: 16.07, ActiveIdx: 1
+[DEBUG] Pos: 16.18, ActiveIdx: 1
+[DEBUG] Pos: 16.28, ActiveIdx: 1
+[DEBUG] Pos: 16.38, ActiveIdx: 1
+[DEBUG] Pos: 16.48, ActiveIdx: 1
+[DEBUG] Pos: 16.58, ActiveIdx: 1
+[DEBUG] Pos: 16.67, ActiveIdx: 1
+[DEBUG] Pos: 16.78, ActiveIdx: 1
+[DEBUG] Pos: 16.90, ActiveIdx: 1
+[DEBUG] Pos: 16.98, ActiveIdx: 1
+[DEBUG] Pos: 17.08, ActiveIdx: 1
+[DEBUG] Pos: 17.18, ActiveIdx: 1
+[DEBUG] Pos: 17.28, ActiveIdx: 1
+[DEBUG] Pos: 17.38, ActiveIdx: 1
+[DEBUG] Pos: 17.48, ActiveIdx: 1
+[DEBUG] Pos: 17.58, ActiveIdx: 1
+[DEBUG] Pos: 17.68, ActiveIdx: 1
+[DEBUG] Pos: 17.78, ActiveIdx: 1
+[DEBUG] Pos: 17.88, ActiveIdx: 1
+[DEBUG] Pos: 17.98, ActiveIdx: 1
+[DEBUG] Pos: 18.08, ActiveIdx: 1
+[DEBUG] Pos: 18.18, ActiveIdx: 1
+[DEBUG] Pos: 18.26, ActiveIdx: 1
+[DEBUG] Pos: 18.38, ActiveIdx: 1
+[DEBUG] Pos: 18.48, ActiveIdx: 1
+[DEBUG] Pos: 18.58, ActiveIdx: 1
+[DEBUG] Pos: 18.68, ActiveIdx: 1
+[DEBUG] Pos: 18.78, ActiveIdx: 1
+[DEBUG] Pos: 18.88, ActiveIdx: 1
+[DEBUG] Pos: 18.97, ActiveIdx: 1
+[DEBUG] Pos: 19.08, ActiveIdx: 1
+[DEBUG] Pos: 19.18, ActiveIdx: 1
+[DEBUG] Pos: 19.27, ActiveIdx: 1
+[DEBUG] Pos: 19.38, ActiveIdx: 1
+[DEBUG] Pos: 19.48, ActiveIdx: 1
+[DEBUG] Pos: 19.58, ActiveIdx: 1
+[DEBUG] Pos: 19.68, ActiveIdx: 1
+[DEBUG] Pos: 19.78, ActiveIdx: 1
+[DEBUG] Pos: 19.88, ActiveIdx: 1
+[DEBUG] Pos: 19.97, ActiveIdx: 1
+[DEBUG] Pos: 20.07, ActiveIdx: 1
+[DEBUG] Pos: 20.17, ActiveIdx: 1
+[DEBUG] Pos: 20.25, ActiveIdx: 1
+[DEBUG] Pos: 20.38, ActiveIdx: 1
+[DEBUG] Pos: 20.48, ActiveIdx: 1
+[DEBUG] Pos: 20.57, ActiveIdx: 1
+[DEBUG] Pos: 20.68, ActiveIdx: 1
+[DEBUG] Pos: 20.78, ActiveIdx: 1
+[DEBUG] Pos: 20.88, ActiveIdx: 1
+[DEBUG] Pos: 20.97, ActiveIdx: 1
+[DEBUG] Pos: 21.08, ActiveIdx: 1
+[DEBUG] Pos: 21.18, ActiveIdx: 1
+[DEBUG] Pos: 21.28, ActiveIdx: 1
+[DEBUG] Pos: 21.38, ActiveIdx: 1
+[DEBUG] Pos: 21.48, ActiveIdx: 1
+[DEBUG] Pos: 21.57, ActiveIdx: 1
+[DEBUG] Pos: 21.68, ActiveIdx: 1
+[DEBUG] Pos: 21.83, ActiveIdx: 1
+[DEBUG] Pos: 21.87, ActiveIdx: 1
+[DEBUG] Pos: 21.96, ActiveIdx: 1
+[DEBUG] Pos: 22.06, ActiveIdx: 1
+[DEBUG] Pos: 22.18, ActiveIdx: 1
+[DEBUG] Pos: 22.27, ActiveIdx: 1
+[DEBUG] Pos: 22.38, ActiveIdx: 1
+[DEBUG] Pos: 22.48, ActiveIdx: 1
+[DEBUG] Pos: 22.58, ActiveIdx: 1
+[DEBUG] Pos: 22.68, ActiveIdx: 1
+[DEBUG] Pos: 22.77, ActiveIdx: 1
+[DEBUG] Pos: 22.88, ActiveIdx: 1
