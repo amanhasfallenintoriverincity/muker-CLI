@@ -61,13 +61,29 @@ class VisualizerWidget(Widget):
 
         # If no audio data, show placeholder
         if np.all(spectrum == 0):
+            lines = []
+            lines.append("\n" * (height // 2 - 1))
+
+            # Center align text manually
+            title = "♫ Audio Visualizer ♫"
+            style_text = f"Style: {self.visualizer.get_style().value}"
+            help_text = "Press 'v' to change style"
+
+            # Calculate padding for centering
+            padding_title = (width - len(title)) // 2 if width > len(title) else 0
+            padding_style = (width - len(style_text)) // 2 if width > len(style_text) else 0
+            padding_help = (width - len(help_text)) // 2 if width > len(help_text) else 0
+
             result = Text()
             result.append("\n" * (height // 2 - 1))
-            result.append("♫ Audio Visualizer ♫", style="bold cyan", justify="center")
+            result.append(" " * padding_title)
+            result.append(title, style="bold cyan")
             result.append("\n")
-            result.append(f"Style: {self.visualizer.get_style().value}", style="dim cyan", justify="center")
+            result.append(" " * padding_style)
+            result.append(style_text, style="dim cyan")
             result.append("\n")
-            result.append("Press 'v' to change style", style="dim", justify="center")
+            result.append(" " * padding_help)
+            result.append(help_text, style="dim")
             return result
 
         lines = []

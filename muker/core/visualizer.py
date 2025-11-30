@@ -82,15 +82,34 @@ class AudioVisualizer:
         fft_result = np.fft.rfft(windowed)
         magnitude = np.abs(fft_result)
 
-        # Convert to decibels
-        # Add small epsilon to avoid log(0)
-        db = 20 * np.log10(magnitude + 1e-10)
+        # Normalize magnitude directly (simpler and more visual)
+        # Scale by FFT size to get proper magnitude
+        magnitude = magnitude / (self.fft_size / 2)
 
-        # Normalize to 0-1 range
-        db_min = -80  # Minimum dB threshold
-        db_max = 0    # Maximum dB (0 dB)
-        db = np.clip(db, db_min, db_max)
-        normalized = (db - db_min) / (db_max - db_min)
+        # Apply logarithmic scaling for better visualization
+        # Add small epsilon to avoid log(0)
+        epsilon = 1e-6
+        log_magnitude = np.log10(magnitude + epsilon)
+
+        # Normalize to 0-1 range with better dynamic range
+        # Use percentile-based normalization for adaptive range
+        max_val = np.percentile(log_magnitude, 95)  # Use 95th percentile as max (less aggressive)
+        min_val = np.percentile(log_magnitude, 5)   # Use 5th percentile as min
+
+        # Avoid division by zero
+        if max_val - min_val < epsilon:
+            normalized = np.zeros_like(log_magnitude)
+        else:
+            normalized = (log_magnitude - min_val) / (max_val - min_val)
+
+        # Clip to 0-1
+        normalized = np.clip(normalized, 0.0, 1.0)
+
+        # Apply stronger gamma correction to prevent bars from being too tall
+        normalized = np.power(normalized, 0.5)  # Stronger gamma correction (0.5 instead of 0.7)
+
+        # Scale down overall height to 60% max to prevent fullness
+        normalized = normalized * 0.6
 
         # Resample to desired number of bins using logarithmic scale
         self.spectrum_data = self._resample_spectrum(normalized, 32)

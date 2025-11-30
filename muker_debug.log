@@ -1,0 +1,87 @@
+[DEBUG] Environment configured for Windows terminal support
+[DEBUG] Debug output will be saved to muker_debug.log
+pygame 2.6.1 (SDL 2.28.4, Python 3.12.10)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[DEBUG] app.py imports completed successfully
+[DEBUG] CSS path: C:\Users\admin\OneDrive\Desktop\muker-CLI\muker\ui\styles.tcss
+[DEBUG] CSS file exists: True
+[DEBUG] Starting Muker application...
+[DEBUG] Initializing MukerApp...
+[DEBUG] Creating Config...
+[DEBUG] Creating AudioPlayer...
+[DEBUG] Initializing pygame.mixer...
+[DEBUG] pygame.mixer initialized - volume: 70%
+[DEBUG] Creating PlaylistManager...
+[DEBUG] Creating MusicLibrary...
+[DEBUG] Creating AudioVisualizer...
+[DEBUG] MukerApp initialization complete
+[DEBUG] MukerApp created
+[DEBUG] Calling app.run()...
+[DEBUG] Starting in interactive mode...
+[DEBUG] compose() called
+[DEBUG] Importing widgets...
+[DEBUG] VisualizerWidget imported
+[DEBUG] PlaylistView imported
+[DEBUG] PlayerControls imported
+[DEBUG] LibraryBrowser imported
+[DEBUG] Creating layout...
+[DEBUG] Creating VisualizerWidget...
+[DEBUG] VisualizerWidget created
+[DEBUG] Creating LibraryBrowser...
+[DEBUG] LibraryBrowser created
+[DEBUG] Creating PlaylistView...
+[DEBUG] PlaylistView created
+[DEBUG] Creating PlayerControls...
+[DEBUG] PlayerControls created
+[DEBUG] compose() complete
+[DEBUG] App mounted
+[DEBUG] Volume changed to 20%
+[DEBUG] Music folder exists: True
+[DEBUG] Music folder path: C:\Users\admin\Music
+[DEBUG] Found 1 MP3 files in C:\Users\admin\Music
+[DEBUG]   - FIRE.mp3
+[DEBUG] Starting scan of directory: C:\Users\admin\Music
+[DEBUG] Found 2 tracks
+[DEBUG] Added 2 tracks to playlist
+[DEBUG] Forcing playlist view update
+[DEBUG] First track: Blinding Lights
+[DEBUG] Loading first track: C:\Users\admin\Music\Blind.flac
+[DEBUG] Loading track: C:\Users\admin\Music\Blind.flac
+[DEBUG] Track loaded successfully. Duration: 202.74s
+[DEBUG] Stream info - channels: 2, sample_rate: 44100
+[DEBUG] Starting playback of Blinding Lights
+[DEBUG] Playback thread started
+[DEBUG] Loading file with pygame.mixer: C:\Users\admin\Music\Blind.flac
+[DEBUG] Playback thread launched
+[DEBUG] pygame.mixer playback started - volume: 20%
+[DEBUG] Visualizer samples ready - shape: (8941008, 2)
+[DEBUG] action_toggle_play called
+[DEBUG] Player state - is_playing: True, is_paused: False
+[DEBUG] Playlist has 2 tracks
+[DEBUG] Pausing playback
+[DEBUG] Pausing playback
+[DEBUG] action_toggle_play called
+[DEBUG] Player state - is_playing: True, is_paused: True
+[DEBUG] Playlist has 2 tracks
+[DEBUG] Resuming from pause
+[DEBUG] Resuming playback
+[DEBUG] action_toggle_play called
+[DEBUG] Player state - is_playing: True, is_paused: False
+[DEBUG] Playlist has 2 tracks
+[DEBUG] Pausing playback
+[DEBUG] Pausing playback
+[DEBUG] action_toggle_play called
+[DEBUG] Player state - is_playing: True, is_paused: True
+[DEBUG] Playlist has 2 tracks
+[DEBUG] Resuming from pause
+[DEBUG] Resuming playback
+[DEBUG] action_toggle_play called
+[DEBUG] Player state - is_playing: True, is_paused: False
+[DEBUG] Playlist has 2 tracks
+[DEBUG] Pausing playback
+[DEBUG] Pausing playback
+[DEBUG] action_toggle_play called
+[DEBUG] Player state - is_playing: True, is_paused: True
+[DEBUG] Playlist has 2 tracks
+[DEBUG] Resuming from pause
+[DEBUG] Resuming playback
