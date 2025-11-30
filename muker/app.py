@@ -194,7 +194,6 @@ class MukerApp(App):
         """Handle key press events."""
         print(f"[DEBUG] Key pressed: {event.key}")
         # Let the default handler process it
-        await super().on_key(event)
 
     async def _process_pcm_data(self):
         """Background task to process PCM data for visualizer."""
