@@ -1,3 +1,4 @@
+muker_debug.log
 # Python
 __pycache__/
 *.py[cod]
@@ -58,7 +59,6 @@ Thumbs.db
 /.claude
 
 
-
-
 .cache
 spotify-lyrics.md
+
