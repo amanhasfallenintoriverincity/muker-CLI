@@ -39,10 +39,54 @@ class PlayerControls(Widget):
         # Current track info (top line)
         current_track = self.playlist.get_current_track()
         if current_track:
+            # Main track info
             track_info = f"♫ {current_track.artist} - {current_track.title}"
-            if current_track.album and current_track.album != "Unknown Album":
-                track_info += f" [{current_track.album}]"
             result.append(track_info, style="bold cyan")
+
+            result.append("\n")
+
+            # Secondary info line (album, year, genre)
+            secondary_parts = []
+
+            if current_track.album and current_track.album != "Unknown Album":
+                album_str = current_track.album
+                if current_track.track_number:
+                    album_str = f"#{current_track.track_number} {album_str}"
+                secondary_parts.append(album_str)
+
+            if current_track.year:
+                secondary_parts.append(f"({current_track.year})")
+
+            if current_track.genre:
+                secondary_parts.append(f"[{current_track.genre}]")
+
+            if secondary_parts:
+                result.append("  " + " · ".join(secondary_parts), style="dim cyan")
+                result.append("\n")
+
+            # Technical info line (format, bitrate, sample rate)
+            tech_parts = []
+
+            # File format
+            tech_parts.append(current_track.extension.upper().replace('.', ''))
+
+            # Bitrate
+            if current_track.bitrate:
+                tech_parts.append(f"{current_track.bitrate}kbps")
+
+            # Sample rate
+            if current_track.sample_rate:
+                if current_track.sample_rate >= 1000:
+                    tech_parts.append(f"{current_track.sample_rate / 1000:.1f}kHz")
+                else:
+                    tech_parts.append(f"{current_track.sample_rate}Hz")
+
+            # Channels
+            if current_track.channels:
+                tech_parts.append(current_track.format_channels())
+
+            if tech_parts:
+                result.append("  " + " │ ".join(tech_parts), style="dim white")
         else:
             result.append("No track loaded", style="dim")
 
@@ -104,5 +148,8 @@ class PlayerControls(Widget):
 
         if mode_parts:
             result.append("  │  " + " ".join(mode_parts), style="bold blue")
+
+        # Lyrics toggle info
+        result.append("  │  📜 Lyrics (l)", style="bold purple")
 
         return result

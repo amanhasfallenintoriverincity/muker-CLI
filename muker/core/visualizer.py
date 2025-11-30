@@ -93,7 +93,7 @@ class AudioVisualizer:
 
         # Normalize to 0-1 range with better dynamic range
         # Use percentile-based normalization for adaptive range
-        max_val = np.percentile(log_magnitude, 95)  # Use 95th percentile as max (less aggressive)
+        max_val = np.percentile(log_magnitude, 98)  # Use 98th percentile as max
         min_val = np.percentile(log_magnitude, 5)   # Use 5th percentile as min
 
         # Avoid division by zero
@@ -105,11 +105,13 @@ class AudioVisualizer:
         # Clip to 0-1
         normalized = np.clip(normalized, 0.0, 1.0)
 
-        # Apply stronger gamma correction to prevent bars from being too tall
-        normalized = np.power(normalized, 0.5)  # Stronger gamma correction (0.5 instead of 0.7)
+        # Apply very strong gamma correction
+        # This keeps normal sounds low, but lets loud sounds reach high
+        # Gamma 0.35 means: 0.5 -> 0.19, 0.8 -> 0.46, 1.0 -> 1.0
+        normalized = np.power(normalized, 0.5)
 
-        # Scale down overall height to 60% max to prevent fullness
-        normalized = normalized * 0.6
+        # Allow full 100% height range for peaks
+        # No scaling down - loud sounds can reach the top!
 
         # Resample to desired number of bins using logarithmic scale
         self.spectrum_data = self._resample_spectrum(normalized, 32)

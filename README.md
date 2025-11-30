@@ -11,6 +11,8 @@ A feature-rich command-line interface music player with real-time audio visualiz
 - 🔀 **Shuffle & Repeat**: Multiple playback modes
 - 🖥️ **Rich TUI**: Modern terminal user interface powered by Textual
 - ⚡ **High Performance**: Optimized for smooth 30-60 FPS visualizer updates
+- 🎼 **Detailed Track Information**: Display comprehensive metadata including bitrate, sample rate, channels
+- 🌐 **Spotify Integration** (Optional): Automatically enrich local metadata with Spotify Web API
 
 ## Requirements
 
@@ -19,11 +21,24 @@ A feature-rich command-line interface music player with real-time audio visualiz
 
 ## Installation
 
-### Using pip
+### Basic Installation
+
+Install core dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
+
+### Optional: Spotify Integration
+
+To enable metadata enrichment from Spotify Web API:
+
+1. Install optional dependencies (spotipy, python-dotenv):
+```bash
+pip install spotipy python-dotenv
+```
+
+2. Follow the detailed setup guide in [SPOTIFY_SETUP.md](SPOTIFY_SETUP.md)
 
 ### Using Poetry
 
@@ -78,11 +93,38 @@ mypy muker/
 
 ```
 muker/
-├── core/          # Business logic (player, playlist, visualizer)
-├── ui/            # Textual UI components
-├── models/        # Data models
-└── utils/         # Utility functions
+├── core/          # Business logic (player, playlist, visualizer, library)
+├── ui/            # Textual UI components and widgets
+├── models/        # Data models (Track, etc.)
+├── services/      # External API integrations (Spotify)
+└── utils/         # Utility functions (file scanner, etc.)
 ```
+
+## Track Information Display
+
+Muker displays comprehensive track information including:
+
+**Line 1: Main Info**
+- Artist and track title
+
+**Line 2: Album Info**
+- Track number, album name, release year, genre
+
+**Line 3: Technical Info**
+- Audio format (MP3, FLAC, etc.)
+- Bitrate (e.g., 320kbps)
+- Sample rate (e.g., 44.1kHz)
+- Channels (Mono/Stereo)
+
+## Spotify Metadata Enrichment
+
+When enabled, Muker automatically:
+- Searches Spotify for tracks with incomplete metadata
+- Fills in missing album, year, genre, and track number information
+- Uses accurate artist names from Spotify
+- Falls back to local metadata if Spotify is unavailable
+
+See [SPOTIFY_SETUP.md](SPOTIFY_SETUP.md) for setup instructions.
 
 ## License
 

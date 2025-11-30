@@ -60,6 +60,25 @@ LibraryBrowser {
     padding: 1;
 }
 
+#lyrics-container {
+    width: 60%;
+    border: solid magenta;
+    background: #0d1117;
+    padding: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+LyricsPanel {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    background: #0d1117;
+    color: white;
+}
+
 #playlist {
     height: 100%;
     width: 100%;

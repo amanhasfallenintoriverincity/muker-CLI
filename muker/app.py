@@ -37,6 +37,7 @@ class MukerApp(App):
         Binding("s", "toggle_shuffle", "Shuffle", priority=True),
         Binding("r", "toggle_repeat", "Repeat", priority=True),
         Binding("v", "cycle_visualizer", "Visualizer", priority=True),
+        Binding("l", "toggle_lyrics", "Lyrics", priority=True),
         Binding("o", "open_folder", "Open Folder", priority=True),
         Binding("q", "quit", "Quit", priority=True),
     ]
@@ -101,6 +102,13 @@ class MukerApp(App):
             print(f"[ERROR] Failed to import LibraryBrowser: {e}")
             LibraryBrowser = None
 
+        try:
+            from muker.ui.widgets.lyrics_panel import LyricsPanel
+            print("[DEBUG] LyricsPanel imported")
+        except Exception as e:
+            print(f"[ERROR] Failed to import LyricsPanel: {e}")
+            LyricsPanel = None
+
         print("[DEBUG] Creating layout...")
         yield Header()
 
@@ -118,7 +126,7 @@ class MukerApp(App):
                     yield Static("VisualizerWidget import failed")
 
             with Horizontal(id="content-container"):
-                with Vertical(id="library-panel"):
+                with Vertical(id="library-panel", classes="hidden"):
                     if LibraryBrowser:
                         print("[DEBUG] Creating LibraryBrowser...")
                         try:
@@ -141,6 +149,18 @@ class MukerApp(App):
                             yield Static(f"Error: {e}")
                     else:
                         yield Static("PlaylistView import failed")
+
+                with Vertical(id="lyrics-panel"):
+                    if LyricsPanel:
+                        print("[DEBUG] Creating LyricsPanel...")
+                        try:
+                            yield LyricsPanel(self.player, self.playlist)
+                            print("[DEBUG] LyricsPanel created")
+                        except Exception as e:
+                            print(f"[ERROR] Failed to create LyricsPanel: {e}")
+                            yield Static(f"Error: {e}")
+                    else:
+                        yield Static("LyricsPanel import failed")
 
             with Container(id="controls-container"):
                 if PlayerControls:
@@ -196,12 +216,52 @@ class MukerApp(App):
                 # Log error but continue
                 pass
 
+    async def _fetch_lyrics_for_track(self, track):
+        """Fetch lyrics for a track if available.
+
+        Args:
+            track: Track to fetch lyrics for
+        """
+        # Check if Spotify service is available
+        if not hasattr(self.library, 'spotify_enabled') or not self.library.spotify_enabled:
+            return
+
+        # Skip if track already has lyrics
+        if track.lyrics:
+            return
+
+        # Skip if no Spotify track ID
+        if not track.spotify_track_id:
+            return
+
+        try:
+            # Import SpotifyService
+            from muker.services.spotify_service import SpotifyService
+            from muker.utils.file_scanner import FileScanner
+
+            # Get Spotify service instance
+            spotify_service = FileScanner._spotify_service
+            if not spotify_service:
+                return
+
+            # Fetch lyrics in background
+            await asyncio.to_thread(
+                spotify_service.enrich_track_with_lyrics,
+                track,
+                format="lrc"
+            )
+        except Exception as e:
+            print(f"[WARNING] Failed to fetch lyrics: {e}")
+
     async def _on_track_end(self):
         """Handle track end event."""
         # Get next track from playlist
         next_track = self.playlist.next_track()
 
         if next_track:
+            # Fetch lyrics for next track
+            await self._fetch_lyrics_for_track(next_track)
+
             # Load and play next track
             await self.player.load_track(next_track)
             await self.player.play()
@@ -246,6 +306,8 @@ class MukerApp(App):
             print(f"[DEBUG] Current track: {track.title if track else 'None'}")
             if track:
                 print(f"[DEBUG] Loading and playing track: {track.file_path}")
+                # Fetch lyrics for track
+                await self._fetch_lyrics_for_track(track)
                 await self.player.load_track(track)
                 await self.player.play()
             else:
@@ -256,6 +318,7 @@ class MukerApp(App):
         """Play next track."""
         next_track = self.playlist.next_track()
         if next_track:
+            await self._fetch_lyrics_for_track(next_track)
             await self.player.load_track(next_track)
             await self.player.play()
 
@@ -263,6 +326,7 @@ class MukerApp(App):
         """Play previous track."""
         prev_track = self.playlist.previous_track()
         if prev_track:
+            await self._fetch_lyrics_for_track(prev_track)
             await self.player.load_track(prev_track)
             await self.player.play()
 
@@ -289,6 +353,13 @@ class MukerApp(App):
     def action_cycle_visualizer(self):
         """Cycle through visualizer styles."""
         self.visualizer.cycle_style()
+
+    def action_toggle_lyrics(self):
+        """Toggle lyrics panel visibility."""
+        lyrics_panel = self.query_one("#lyrics-panel")
+        library_panel = self.query_one("#library-panel")
+        lyrics_panel.toggle_class("hidden")
+        library_panel.toggle_class("hidden")
 
     async def action_open_folder(self):
         """Open folder dialog and scan for music files."""
@@ -344,6 +415,7 @@ class MukerApp(App):
                 print(f"[DEBUG] First track: {first_track.title if first_track else 'None'}")
                 if first_track:
                     print(f"[DEBUG] Loading first track: {first_track.file_path}")
+                    await self._fetch_lyrics_for_track(first_track)
                     await self.player.load_track(first_track)
                     await self.player.play()
             else:
@@ -363,6 +435,8 @@ class MukerApp(App):
         print("[DEBUG] on_playlist_view_track_selected called")
         print(f"[DEBUG] Selected track: {message.track.title} - {message.track.artist}")
         try:
+            # Fetch lyrics for the selected track
+            await self._fetch_lyrics_for_track(message.track)
             # Load and play the selected track
             await self.player.load_track(message.track)
             await self.player.play()

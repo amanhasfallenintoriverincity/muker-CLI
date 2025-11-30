@@ -48,6 +48,17 @@ dmypy.json
 data/config.json
 data/playlists/*.json
 
+# Environment variables
+.env
+
 # OS
 .DS_Store
 Thumbs.db
+
+/.claude
+
+
+
+
+.cache
+spotify-lyrics.md

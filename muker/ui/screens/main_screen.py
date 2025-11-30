@@ -12,6 +12,7 @@ from muker.core.library import MusicLibrary
 from muker.core.visualizer import AudioVisualizer
 
 from muker.ui.widgets.visualizer_widget import VisualizerWidget
+from muker.ui.widgets.lyrics_panel import LyricsPanel
 from muker.ui.widgets.playlist_view import PlaylistView
 from muker.ui.widgets.player_controls import PlayerControls
 from muker.ui.widgets.library_browser import LibraryBrowser
@@ -30,6 +31,7 @@ class MainScreen(Screen):
         Binding("r", "toggle_repeat", "Repeat"),
         Binding("v", "cycle_visualizer", "Visualizer"),
         Binding("o", "open_folder", "Open Folder"),
+        Binding("l", "toggle_lyrics", "Lyrics"),
     ]
 
     def __init__(
@@ -70,9 +72,20 @@ class MainScreen(Screen):
                 with Vertical(id="playlist-panel"):
                     yield PlaylistView(self.playlist)
 
+                # Lyrics panel (hidden by default)
+                with Vertical(id="lyrics-container", classes="hidden"):
+                    yield LyricsPanel(self.player, self.playlist)
+
             # Player controls (bottom 20%)
             with Container(id="controls-container"):
                 yield PlayerControls(self.player, self.playlist)
+
+    def action_toggle_lyrics(self):
+        """Toggle lyrics panel visibility."""
+        lyrics_panel = self.query_one("#lyrics-container")
+        playlist_panel = self.query_one("#playlist-panel")
+        lyrics_panel.toggle_class("hidden")
+        playlist_panel.toggle_class("hidden")
 
     async def action_toggle_play(self):
         """Toggle play/pause."""

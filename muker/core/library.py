@@ -9,10 +9,31 @@ from muker.utils.file_scanner import FileScanner
 class MusicLibrary:
     """Manages music library and track scanning."""
 
-    def __init__(self):
-        """Initialize music library."""
+    def __init__(self, enable_spotify: bool = True):
+        """Initialize music library.
+
+        Args:
+            enable_spotify: Whether to enable Spotify metadata enrichment
+        """
         self.tracks: List[Track] = []
         self.current_directory: Optional[Path] = None
+        self.spotify_enabled = False
+
+        # Initialize Spotify service if enabled
+        if enable_spotify:
+            try:
+                from muker.services.spotify_service import SpotifyService
+                spotify_service = SpotifyService()
+                if spotify_service.is_available():
+                    FileScanner.set_spotify_service(spotify_service)
+                    self.spotify_enabled = True
+                    print("[INFO] Spotify metadata enrichment enabled")
+                else:
+                    print("[INFO] Spotify not available - using local metadata only")
+            except ImportError:
+                print("[INFO] Spotipy not installed - using local metadata only")
+            except Exception as e:
+                print(f"[WARNING] Failed to initialize Spotify service: {e}")
 
     async def scan_directory(self, directory: Path, recursive: bool = True) -> List[Track]:
         """Scan a directory for music files.
@@ -25,7 +46,11 @@ class MusicLibrary:
             List of found tracks
         """
         self.current_directory = directory
-        self.tracks = await FileScanner.scan_directory(directory, recursive)
+        self.tracks = await FileScanner.scan_directory(
+            directory,
+            recursive,
+            enrich_with_spotify=self.spotify_enabled
+        )
         return self.tracks
 
     def get_tracks(self) -> List[Track]:

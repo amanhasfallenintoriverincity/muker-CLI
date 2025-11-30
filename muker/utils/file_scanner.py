@@ -2,7 +2,7 @@
 
 import asyncio
 from pathlib import Path
-from typing import List, Set
+from typing import List, Set, Optional, Any
 from mutagen import File as MutagenFile
 from mutagen.mp3 import MP3
 from mutagen.flac import FLAC
@@ -18,6 +18,18 @@ class FileScanner:
     # Supported audio file extensions
     SUPPORTED_EXTENSIONS: Set[str] = {'.mp3', '.wav', '.flac', '.ogg'}
 
+    # Spotify service instance (shared across scans)
+    _spotify_service: Optional[Any] = None
+
+    @classmethod
+    def set_spotify_service(cls, service):
+        """Set Spotify service for metadata enrichment.
+
+        Args:
+            service: SpotifyService instance
+        """
+        cls._spotify_service = service
+
     @staticmethod
     def is_supported(file_path: Path) -> bool:
         """Check if a file is a supported audio format.
@@ -30,8 +42,8 @@ class FileScanner:
         """
         return file_path.suffix.lower() in FileScanner.SUPPORTED_EXTENSIONS
 
-    @staticmethod
-    def extract_metadata(file_path: Path) -> Track:
+    @classmethod
+    def extract_metadata(cls, file_path: Path, enrich_with_spotify: bool = False) -> Track:
         """Extract metadata from an audio file.
 
         Args:
@@ -58,6 +70,9 @@ class FileScanner:
             track_number = None
             year = None
             genre = None
+            bitrate = None
+            sample_rate = None
+            channels = None
 
             # Try to get metadata from tags
             if hasattr(audio, 'tags') and audio.tags:
@@ -85,11 +100,27 @@ class FileScanner:
                 if 'genre' in audio.tags:
                     genre = audio.tags['genre'][0]
 
-            # Get duration
-            if hasattr(audio.info, 'length'):
-                duration = float(audio.info.length)
+            # Get audio info (duration, bitrate, sample rate, channels)
+            if hasattr(audio, 'info'):
+                info = audio.info
 
-            return Track(
+                # Duration
+                if hasattr(info, 'length'):
+                    duration = float(info.length)
+
+                # Bitrate (in kbps)
+                if hasattr(info, 'bitrate'):
+                    bitrate = int(info.bitrate / 1000)  # Convert to kbps
+
+                # Sample rate (in Hz)
+                if hasattr(info, 'sample_rate'):
+                    sample_rate = int(info.sample_rate)
+
+                # Channels
+                if hasattr(info, 'channels'):
+                    channels = int(info.channels)
+
+            track = Track(
                 file_path=str(file_path),
                 title=title,
                 artist=artist,
@@ -97,23 +128,36 @@ class FileScanner:
                 duration=duration,
                 track_number=track_number,
                 year=year,
-                genre=genre
+                genre=genre,
+                bitrate=bitrate,
+                sample_rate=sample_rate,
+                channels=channels
             )
+
+            # Enrich with Spotify if requested and service is available
+            if enrich_with_spotify and cls._spotify_service and cls._spotify_service.is_available():
+                # Enrich all tracks that have artist and title
+                if artist != "Unknown Artist" and title:
+                    track = cls._spotify_service.enrich_track(track)
+
+            return track
 
         except Exception as e:
             # If metadata extraction fails, return basic track info
+            print(f"[WARNING] Metadata extraction failed for {file_path}: {e}")
             return Track(
                 file_path=str(file_path),
                 title=file_path.stem
             )
 
-    @staticmethod
-    async def scan_directory(directory: Path, recursive: bool = True) -> List[Track]:
+    @classmethod
+    async def scan_directory(cls, directory: Path, recursive: bool = True, enrich_with_spotify: bool = False) -> List[Track]:
         """Scan a directory for music files.
 
         Args:
             directory: Directory to scan
             recursive: Whether to scan subdirectories recursively
+            enrich_with_spotify: Whether to enrich metadata with Spotify
 
         Returns:
             List of Track objects
@@ -129,8 +173,8 @@ class FileScanner:
             pattern = '**/*' if recursive else '*'
 
             for file_path in directory.glob(pattern):
-                if file_path.is_file() and FileScanner.is_supported(file_path):
-                    track = FileScanner.extract_metadata(file_path)
+                if file_path.is_file() and cls.is_supported(file_path):
+                    track = cls.extract_metadata(file_path, enrich_with_spotify=enrich_with_spotify)
                     found_tracks.append(track)
 
             return found_tracks

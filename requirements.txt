@@ -3,6 +3,12 @@ miniaudio>=1.59
 numpy>=1.26.0
 mutagen>=1.47.0
 aiofiles>=23.2.0
+pygame>=2.5.0
+
+# Optional dependencies
+spotipy>=2.23.0
+python-dotenv>=1.0.0
+requests>=2.31.0
 
 # Development dependencies
 pytest>=7.4.0
