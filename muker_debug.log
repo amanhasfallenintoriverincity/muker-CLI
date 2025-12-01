@@ -38,6 +38,7 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 [DEBUG] PlaylistView created
 [DEBUG] Creating LyricsPanel...
 [INFO] Genius API client initialized successfully
+[INFO] Gemini API client initialized successfully
 [DEBUG] LyricsPanel created
 [DEBUG] Creating PlayerControls...
 [DEBUG] PlayerControls created
@@ -46,13 +47,19 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 [DEBUG] Volume changed to 20%
 [DEBUG] Music folder exists: True
 [DEBUG] Music folder path: C:\Users\admin\Music
-[DEBUG] Found 1 MP3 files in C:\Users\admin\Music
+[DEBUG] Found 4 MP3 files in C:\Users\admin\Music
 [DEBUG]   - Blind.mp3
+[DEBUG]   - Save Your Tears.mp3
+[DEBUG]   - St. Chroma (feat. Daniel Caesar) - Tyler, The Creator - SoundLoadMate.com.mp3
+[DEBUG]   - Thrusting.com.mp3
 [DEBUG] Starting scan of directory: C:\Users\admin\Music
 [INFO] Enriched track from Spotify: The Weeknd - Blinding Lights
+[INFO] Enriched track from Spotify: The Weeknd, Ariana Grande - save your tears
+[INFO] Enriched track from Spotify: Tyler, The Creator, Daniel Caesar - St. Chroma (feat. Daniel Caesar)
+[INFO] Enriched track from Spotify: Internet Money, Swae Lee, Future - Thrusting Ft. Swae Lee & Future
 [INFO] Enriched track from Spotify: BoyWithUke - Toxic
-[DEBUG] Found 3 tracks
-[DEBUG] Added 3 tracks to playlist
+[DEBUG] Found 6 tracks
+[DEBUG] Added 6 tracks to playlist
 [DEBUG] Forcing playlist view update
 [DEBUG] First track: Toxic
 [DEBUG] Loading first track: C:\Users\admin\Music\Toxic.flac
@@ -64,330 +71,80 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 [DEBUG] Stream info - channels: 2, sample_rate: 44100
 [DEBUG] Starting playback of Toxic
 [DEBUG] Playback thread started
-[DEBUG] Loading file with pygame.mixer: C:\Users\admin\Music\Toxic.flac
 [DEBUG] Playback thread launched
+[DEBUG] Loading file with pygame.mixer: C:\Users\admin\Music\Toxic.flac
 [DEBUG] pygame.mixer playback started - volume: 20%
 [DEBUG] Visualizer samples ready - shape: (7409682, 2)
 [DEBUG] Lyrics loaded. Synced: True, Lines: 0
-[DEBUG] Pos: 0.02, ActiveIdx: -1
 [DEBUG] Searching Genius for: Toxic by BoyWithUke
-[DEBUG] Pos: 0.58, ActiveIdx: 0
 [DEBUG] Set active line 0: frozenset({'active'})
-[DEBUG] Pos: 0.70, ActiveIdx: 0
-[DEBUG] Pos: 0.80, ActiveIdx: 0
-[DEBUG] Pos: 0.90, ActiveIdx: 0
-[DEBUG] Pos: 0.99, ActiveIdx: 0
-[DEBUG] Pos: 1.10, ActiveIdx: 0
-[DEBUG] Pos: 1.20, ActiveIdx: 0
-[DEBUG] Pos: 1.35, ActiveIdx: 0
-[DEBUG] Pos: 1.38, ActiveIdx: 0
-[DEBUG] Pos: 1.48, ActiveIdx: 0
-[DEBUG] Pos: 1.58, ActiveIdx: 0
-[DEBUG] Pos: 1.67, ActiveIdx: 0
-[DEBUG] Song object type: <class 'lyricsgenius.types.song.Song'>
 [INFO] Found Genius song ID: 7104629
-[DEBUG] Pos: 1.79, ActiveIdx: 0
-[DEBUG] Pos: 1.89, ActiveIdx: 0
-[DEBUG] Pos: 1.98, ActiveIdx: 0
-[DEBUG] Pos: 2.14, ActiveIdx: 0
-[DEBUG] Pos: 2.18, ActiveIdx: 0
-[DEBUG] Pos: 2.30, ActiveIdx: 0
-[DEBUG] Pos: 2.40, ActiveIdx: 0
-[INFO] Fetched 10 annotations for Toxic
-[DEBUG] Pos: 2.51, ActiveIdx: 0
-[DEBUG] Pos: 2.61, ActiveIdx: 0
-[DEBUG] Pos: 2.70, ActiveIdx: 0
-[DEBUG] Pos: 2.80, ActiveIdx: 0
-[DEBUG] Song object type: <class 'lyricsgenius.types.song.Song'>
 [INFO] Found Genius song ID: 7104629
-[DEBUG] Pos: 2.90, ActiveIdx: 0
-[DEBUG] Pos: 2.98, ActiveIdx: 0
-[DEBUG] Pos: 3.08, ActiveIdx: 0
-[DEBUG] Pos: 3.21, ActiveIdx: 1
-[DEBUG] Set active line 1: frozenset({'active'})
-[DEBUG] Pos: 3.27, ActiveIdx: 1
-[DEBUG] Pos: 3.38, ActiveIdx: 1
-[DEBUG] Pos: 3.48, ActiveIdx: 1
-[DEBUG] Pos: 3.57, ActiveIdx: 1
-[DEBUG] Pos: 3.68, ActiveIdx: 1
-[DEBUG] Pos: 3.84, ActiveIdx: 1
-[DEBUG] Pos: 3.90, ActiveIdx: 1
-[DEBUG] Pos: 4.00, ActiveIdx: 1
-[DEBUG] Pos: 4.11, ActiveIdx: 1
-[DEBUG] Pos: 4.20, ActiveIdx: 1
-[INFO] Fetched 10 annotations for Toxic
-[DEBUG] Pos: 4.30, ActiveIdx: 1
-[DEBUG] Pos: 4.40, ActiveIdx: 1
-[DEBUG] Pos: 4.51, ActiveIdx: 1
-[DEBUG] Pos: 4.60, ActiveIdx: 1
-[DEBUG] Pos: 4.68, ActiveIdx: 1
-[DEBUG] Pos: 4.82, ActiveIdx: 1
-[DEBUG] Pos: 4.87, ActiveIdx: 1
-[DEBUG] Pos: 4.97, ActiveIdx: 1
-[DEBUG] Pos: 5.08, ActiveIdx: 1
-[DEBUG] Pos: 5.18, ActiveIdx: 1
-[DEBUG] Pos: 5.30, ActiveIdx: 1
-[DEBUG] Pos: 5.40, ActiveIdx: 1
-[DEBUG] Pos: 5.52, ActiveIdx: 1
-[DEBUG] Pos: 5.59, ActiveIdx: 1
-[DEBUG] Pos: 5.71, ActiveIdx: 1
-[DEBUG] Pos: 5.81, ActiveIdx: 1
-[DEBUG] Pos: 5.90, ActiveIdx: 1
-[DEBUG] Pos: 6.00, ActiveIdx: 1
-[DEBUG] Pos: 6.11, ActiveIdx: 1
-[DEBUG] Pos: 6.20, ActiveIdx: 2
-[DEBUG] Set active line 2: frozenset({'active'})
-[DEBUG] Pos: 6.30, ActiveIdx: 2
-[DEBUG] Pos: 6.42, ActiveIdx: 2
-[DEBUG] Pos: 6.48, ActiveIdx: 2
-[DEBUG] Pos: 6.58, ActiveIdx: 2
-[DEBUG] Pos: 6.68, ActiveIdx: 2
 [DEBUG] on_playlist_view_track_selected called
-[DEBUG] Selected track: Blinding Lights - The Weeknd
-[DEBUG] Searching Genius for: Blinding Lights by The Weeknd
-[DEBUG-LYRICS-API] Raw response: {'error': False, 'syncType': 'LINE_SYNCED', 'lines': [{'timeTag': '00:13.34', 'words': 'Yeah'}, {'timeTag': '00:15.72', 'words': '♪'}, {'timeTag': '00:26.90', 'words': "I've been tryna call"}, {'timeTag': '00:29.68', 'words': "I've been on my own for long enough"}, {'timeTag': '00:32.64', 'words': 'Maybe you can show me how to love, maybe'}, {'timeTag': '00:38.19', 'words': "I'm goin' through withdrawals"}, {'timeTag': '00:40.83', 'words': "You don't even have to do too much"}, {'timeTag': '00:43.88', 'words': 'You can turn me on with just a touch, baby'}, {'timeTag': '00:49.31', 'words': 'I look around and'}, {'timeTag': '00:50.56', 'words': "Sin City's cold and empty (oh)"}, {'timeTag': '00:53.45', 'words': "No one's around to judge me (oh)"}, {'timeTag': '00:56.16', 'words': "I can't see clearly when you're gone"}, {'timeTag': '01:00.72', 'words': "I said, ooh, I'm blinded by the lights"}, {'timeTag': '01:06.55', 'words': "No, I can't sleep until I feel your touch"}, {'timeTag': '01:11.73', 'words': "I said, ooh, I'm drowning in the night"}, {'timeTag': '01:17.82', 'words': "Oh, when I'm like this, you're the one I trust"}, {'timeTag': '01:22.04', 'words': '(Hey, hey, hey)'}, {'timeTag': '01:25.95', 'words': '♪'}, {'timeTag': '01:34.30', 'words': "I'm running out of time"}, {'timeTag': '01:37.10', 'words': "'Cause I can see the sun light up the sky"}, {'timeTag': '01:40.01', 'words': 'So I hit the road in overdrive, baby, oh'}, {'timeTag': '01:46.82', 'words': "The city's cold and empty (oh)"}, {'timeTag': '01:49.63', 'words': "No one's around to judge me (oh)"}, {'timeTag': '01:52.29', 'words': "I can't see clearly when you're gone"}, {'timeTag': '01:56.98', 'words': "I said, ooh, I'm blinded by the lights"}, {'timeTag': '02:02.87', 'words': "No, I can't sleep until I feel your touch"}, {'timeTag': '02:08.05', 'words': "I said, ooh, I'm drowning in the night"}, {'timeTag': '02:13.80', 'words': "Oh, when I'm like this, you're the one I trust"}, {'timeTag': '02:19.33', 'words': "I'm just walking by to let you know (by to let you know)"}, {'timeTag': '02:22.15', 'words': 'I could never say it on the phone (say it on the phone)'}, {'timeTag': '02:25.36', 'words': 'Will never let you go this time (ooh)'}, {'timeTag': '02:30.49', 'words': "I said, ooh, I'm blinded by the lights"}, {'timeTag': '02:36.49', 'words': "No, I can't sleep until I feel your touch"}, {'timeTag': '02:40.81', 'words': '(Hey, hey, hey)'}, {'timeTag': '02:44.83', 'words': '♪'}, {'timeTag': '02:51.99', 'words': '(Hey, hey, hey)'}, {'timeTag': '02:56.05', 'words': '♪'}, {'timeTag': '03:03.76', 'words': "I said, ooh, I'm blinded by the lights"}, {'timeTag': '03:09.94', 'words': "No, I can't sleep until I feel your touch"}, {'timeTag': '03:13.68', 'words': ''}]}
-[INFO] Fetched lyrics for track 6qYkmqFsXbj8CQjAdbYz07 (format: lrc)
+[DEBUG] Selected track: St. Chroma (feat. Daniel Caesar) - Tyler, The Creator, Daniel Caesar
+[DEBUG] Searching Genius for: St. Chroma by Tyler
+[DEBUG-LYRICS-API] Raw response: {'error': False, 'syncType': 'LINE_SYNCED', 'lines': [{'timeTag': '00:00.22', 'words': 'you are the light'}, {'timeTag': '00:02.93', 'words': "it's not on you, it's in you"}, {'timeTag': '00:05.84', 'words': "don't you ever in your motherfucking life"}, {'timeTag': '00:09.03', 'words': 'dim your light for nobody'}, {'timeTag': '00:11.29', 'words': 'chromakopia'}, {'timeTag': '00:14.39', 'words': 'chromakopia'}, {'timeTag': '00:17.69', 'words': 'chromakopia'}, {'timeTag': '00:20.86', 'words': 'chromakopia'}, {'timeTag': '00:23.96', 'words': 'chromakopia'}, {'timeTag': '00:27.03', 'words': 'chromakopia'}, {'timeTag': '00:30.34', 'words': 'chromakopia'}, {'timeTag': '00:33.44', 'words': 'chromakopia'}, {'timeTag': '00:36.72', 'words': 'chromako-'}, {'timeTag': '00:37.77', 'words': "calm down sit still that's one mil for each wheel"}, {'timeTag': '00:41.08', 'words': 'top down big deal how the fuck he do that?'}, {'timeTag': '00:44.10', 'words': 'what the fuck i look like? get the fuck up out him way'}, {'timeTag': '00:47.34', 'words': 'hawthorne is where him from another planet where him stay'}, {'timeTag': '00:50.70', 'words': '15 cash for that new fort i had guap since 19'}, {'timeTag': '00:53.97', 'words': "i popped out like chi ching i think i'm a got damn fiend"}, {'timeTag': '00:57.06', 'words': "really balling in this bitch i'm the hardest in this bitch"}, {'timeTag': '01:00.27', 'words': "give a fuck about no bark i'm chasing dogs up in this bitch"}, {'timeTag': '01:03.47', 'words': 'el segundo felt like colosseum'}, {'timeTag': '01:06.23', 'words': 'p said i could do it too and boy did i believe him'}, {'timeTag': '01:09.30', 'words': 'i built a path to freedom cause them words that he said'}, {'timeTag': '01:12.03', 'words': 'give a fuck about traditions stop impressing the dead'}, {'timeTag': '01:16.01', 'words': "i'm gon make it promise i'm gon make it out"}, {'timeTag': '01:19.03', 'words': "mama i'm gon make it out pussy i'm gon make it out"}, {'timeTag': '01:22.23', 'words': "i ain't never had a doubt inside me"}, {'timeTag': '01:24.44', 'words': "and if i ever told you that i did i'm fucking lying can you feel the light?"}, {'timeTag': '01:27.34', 'words': 'can you feel the light inside?'}, {'timeTag': '01:30.51', 'words': 'can you feel that fire? (can you feel it? can you feel it? Oh)'}, {'timeTag': '01:33.26', 'words': 'oh, fire (can you feel it? can you feel it? ooh, oh) fire'}, {'timeTag': '01:40.08', 'words': 'can you feel the light (inside) inside?'}, {'timeTag': '01:43.26', 'words': 'can you feel that fire? (can you feel it?)'}, {'timeTag': '01:45.99', 'words': 'oh, fire (fire), fire (ooh)'}, {'timeTag': '01:53.57', 'words': '♪'}, {'timeTag': '01:57.57', 'words': 'Chromakopia (yeah, yeah)'}, {'timeTag': '02:01.47', 'words': ''}, {'timeTag': '02:03.95', 'words': 'Chromakopia (whoo)'}, {'timeTag': '02:10.48', 'words': 'Chromakopia (yeah, yeah)'}, {'timeTag': '02:16.74', 'words': 'Chromakopia'}, {'timeTag': '02:18.82', 'words': 'okay, i am just a box with the light of thunder in me'}, {'timeTag': '02:22.62', 'words': "gratitude sit under the hubris that's on my sleeve"}, {'timeTag': '02:25.98', 'words': "mama said i'm hmmm mm special i was hmm mm"}, {'timeTag': '02:29.18', 'words': 'blowing shit up at home back in chromakopia hmmm hmmm'}, {'timeTag': '02:32.34', 'words': "i don't (I don't), like the (like the), way that this is looking (no)"}, {'timeTag': '02:35.56', 'words': "mirror got me (got me), thinking about my bookend (I'm done)"}, {'timeTag': '02:38.85', 'words': 'i just need this time to myself to figure me out out'}, {'timeTag': '02:41.95', 'words': 'do i keep the light on or do i gracefully bow out?'}, {'timeTag': '02:44.80', 'words': 'you see me, bro'}, {'timeTag': '02:46.56', 'words': '(oh, oh, oh, oh)'}, {'timeTag': '02:49.71', 'words': '(oh, oh, oh, oh)'}, {'timeTag': '02:51.07', 'words': "don't you ever stop bein' who you are (oh, oh, oh, oh)"}, {'timeTag': '02:53.43', 'words': "And dimmin' your light for none of these motherfuckers out here"}, {'timeTag': '02:56.68', 'words': 'can you feel the light inside?'}, {'timeTag': '02:59.81', 'words': 'can you feel that fire? (Oh, oh, oh, oh)'}, {'timeTag': '03:04.14', 'words': 'fire (oh, oh, oh, oh)'}, {'timeTag': '03:07.32', 'words': 'fire'}, {'timeTag': '03:09.31', 'words': 'can you feel the light inside?'}, {'timeTag': '03:12.66', 'words': 'can you feel that fire? (Oh, oh, oh, oh)'}, {'timeTag': '03:15.26', 'words': ''}]}
+[INFO] Fetched lyrics for track 1QoyuMHNBe7lg3YW4Qtll4 (format: lrc)
 [DEBUG] Stopping playback
 [DEBUG] Playback completed!
-[DEBUG] Loading track: C:\Users\admin\Music\Blind.flac
-[DEBUG] Track loaded successfully. Duration: 200.04s
+[DEBUG] Loading track: C:\Users\admin\Music\St. Chroma (feat. Daniel Caesar) - Tyler, The Creator - SoundLoadMate.com.mp3
+[DEBUG] Track loaded successfully. Duration: 197.02s
 [DEBUG] Stream info - channels: 2, sample_rate: 44100
-[DEBUG] Starting playback of Blinding Lights
+[DEBUG] Starting playback of St. Chroma (feat. Daniel Caesar)
 [DEBUG] Playback thread started
 [DEBUG] Playback thread launched
-[DEBUG] Loading file with pygame.mixer: C:\Users\admin\Music\Blind.flac
+[DEBUG] Loading file with pygame.mixer: C:\Users\admin\Music\St. Chroma (feat. Daniel Caesar) - Tyler, The Creator - SoundLoadMate.com.mp3
 [DEBUG] pygame.mixer playback started - volume: 20%
 [DEBUG] Lyrics loaded. Synced: True, Lines: 0
-[DEBUG] Pos: 0.00, ActiveIdx: -1
-[DEBUG] Visualizer samples ready - shape: (8941008, 2)
-[DEBUG] Searching Genius for: Blinding Lights by The Weeknd
-[DEBUG] Pos: 0.53, ActiveIdx: -1
-[DEBUG] Pos: 0.67, ActiveIdx: -1
-[DEBUG] Pos: 0.77, ActiveIdx: -1
-[DEBUG] Pos: 0.85, ActiveIdx: -1
-[DEBUG] Pos: 0.98, ActiveIdx: -1
-[DEBUG] Pos: 1.08, ActiveIdx: -1
-[DEBUG] Pos: 1.18, ActiveIdx: -1
-[DEBUG] Pos: 1.28, ActiveIdx: -1
-[DEBUG] Song object type: <class 'lyricsgenius.types.song.Song'>
-[INFO] Found Genius song ID: 5049949
-[DEBUG] Pos: 1.40, ActiveIdx: -1
-[DEBUG] Pos: 1.48, ActiveIdx: -1
-[DEBUG] Pos: 1.57, ActiveIdx: -1
-[DEBUG] Pos: 1.68, ActiveIdx: -1
-[DEBUG] Pos: 1.78, ActiveIdx: -1
-[DEBUG] Pos: 1.88, ActiveIdx: -1
-[DEBUG] Pos: 1.98, ActiveIdx: -1
-[DEBUG] Song object type: <class 'lyricsgenius.types.song.Song'>
-[INFO] Found Genius song ID: 5049949
-[DEBUG] Pos: 2.09, ActiveIdx: -1
-[DEBUG] Pos: 2.17, ActiveIdx: -1
-[DEBUG] Pos: 2.28, ActiveIdx: -1
-[INFO] Fetched 10 annotations for Blinding Lights
-[DEBUG] Pos: 2.37, ActiveIdx: -1
-[DEBUG] Pos: 2.48, ActiveIdx: -1
-[DEBUG] Pos: 2.58, ActiveIdx: -1
-[INFO] Fetched 10 annotations for Blinding Lights
-[DEBUG] Pos: 2.67, ActiveIdx: -1
-[DEBUG] Pos: 2.77, ActiveIdx: -1
-[DEBUG] Pos: 2.94, ActiveIdx: -1
-[DEBUG] Pos: 2.98, ActiveIdx: -1
-[DEBUG] Pos: 3.08, ActiveIdx: -1
-[DEBUG] Pos: 3.16, ActiveIdx: -1
-[DEBUG] Pos: 3.25, ActiveIdx: -1
-[DEBUG] Pos: 3.35, ActiveIdx: -1
-[DEBUG] Pos: 3.48, ActiveIdx: -1
-[DEBUG] Pos: 3.57, ActiveIdx: -1
-[DEBUG] Pos: 3.68, ActiveIdx: -1
-[DEBUG] Pos: 3.80, ActiveIdx: -1
-[DEBUG] Pos: 3.86, ActiveIdx: -1
-[DEBUG] Pos: 3.95, ActiveIdx: -1
-[DEBUG] Pos: 4.08, ActiveIdx: -1
-[DEBUG] Pos: 4.17, ActiveIdx: -1
-[DEBUG] Pos: 4.28, ActiveIdx: -1
-[DEBUG] Pos: 4.39, ActiveIdx: -1
-[DEBUG] Pos: 4.46, ActiveIdx: -1
-[DEBUG] Pos: 4.57, ActiveIdx: -1
-[DEBUG] Pos: 4.70, ActiveIdx: -1
-[DEBUG] Pos: 4.76, ActiveIdx: -1
-[DEBUG] Pos: 4.80, ActiveIdx: -1
-[DEBUG] Pos: 4.96, ActiveIdx: -1
-[DEBUG] Pos: 5.06, ActiveIdx: -1
-[DEBUG] Pos: 5.15, ActiveIdx: -1
-[DEBUG] Pos: 5.25, ActiveIdx: -1
-[DEBUG] Pos: 5.36, ActiveIdx: -1
-[DEBUG] Pos: 5.45, ActiveIdx: -1
-[DEBUG] Pos: 5.55, ActiveIdx: -1
-[DEBUG] Pos: 5.72, ActiveIdx: -1
-[DEBUG] Pos: 5.75, ActiveIdx: -1
-[DEBUG] Pos: 5.85, ActiveIdx: -1
-[DEBUG] Pos: 5.96, ActiveIdx: -1
-[DEBUG] Pos: 6.05, ActiveIdx: -1
-[DEBUG] Pos: 6.17, ActiveIdx: -1
-[DEBUG] Pos: 6.26, ActiveIdx: -1
-[DEBUG] Pos: 6.35, ActiveIdx: -1
-[DEBUG] Pos: 6.45, ActiveIdx: -1
-[DEBUG] Pos: 6.56, ActiveIdx: -1
-[DEBUG] Pos: 6.66, ActiveIdx: -1
-[DEBUG] Pos: 6.77, ActiveIdx: -1
-[DEBUG] Pos: 6.86, ActiveIdx: -1
-[DEBUG] Pos: 6.98, ActiveIdx: -1
-[DEBUG] Pos: 7.07, ActiveIdx: -1
-[DEBUG] Pos: 7.19, ActiveIdx: -1
-[DEBUG] Pos: 7.29, ActiveIdx: -1
-[DEBUG] Pos: 7.38, ActiveIdx: -1
-[DEBUG] Pos: 7.47, ActiveIdx: -1
-[DEBUG] Pos: 7.58, ActiveIdx: -1
-[DEBUG] Pos: 7.67, ActiveIdx: -1
-[DEBUG] Pos: 7.78, ActiveIdx: -1
-[DEBUG] Pos: 7.94, ActiveIdx: -1
-[DEBUG] Pos: 7.98, ActiveIdx: -1
-[DEBUG] Pos: 8.08, ActiveIdx: -1
-[DEBUG] Pos: 8.19, ActiveIdx: -1
-[DEBUG] Pos: 8.28, ActiveIdx: -1
-[DEBUG] Pos: 8.38, ActiveIdx: -1
-[DEBUG] Pos: 8.48, ActiveIdx: -1
-[DEBUG] Pos: 8.58, ActiveIdx: -1
-[DEBUG] Pos: 8.68, ActiveIdx: -1
-[DEBUG] Pos: 8.82, ActiveIdx: -1
-[DEBUG] Pos: 8.89, ActiveIdx: -1
-[DEBUG] Pos: 8.95, ActiveIdx: -1
-[DEBUG] Pos: 9.06, ActiveIdx: -1
-[DEBUG] Pos: 9.20, ActiveIdx: -1
-[DEBUG] Pos: 9.26, ActiveIdx: -1
-[DEBUG] Pos: 9.35, ActiveIdx: -1
-[DEBUG] Pos: 9.49, ActiveIdx: -1
-[DEBUG] Pos: 9.59, ActiveIdx: -1
-[DEBUG] Pos: 9.68, ActiveIdx: -1
-[DEBUG] Pos: 9.78, ActiveIdx: -1
-[DEBUG] Pos: 9.88, ActiveIdx: -1
-[DEBUG] Pos: 9.96, ActiveIdx: -1
-[DEBUG] Pos: 10.09, ActiveIdx: -1
-[DEBUG] Pos: 10.20, ActiveIdx: -1
-[DEBUG] Pos: 10.26, ActiveIdx: -1
-[DEBUG] Pos: 10.43, ActiveIdx: -1
-[DEBUG] Pos: 10.47, ActiveIdx: -1
-[DEBUG] Pos: 10.59, ActiveIdx: -1
-[DEBUG] Pos: 10.68, ActiveIdx: -1
-[DEBUG] Pos: 10.78, ActiveIdx: -1
-[DEBUG] Pos: 10.88, ActiveIdx: -1
-[DEBUG] Pos: 10.98, ActiveIdx: -1
-[DEBUG] Pos: 11.08, ActiveIdx: -1
-[DEBUG] Pos: 11.18, ActiveIdx: -1
-[DEBUG] Pos: 11.32, ActiveIdx: -1
-[DEBUG] Pos: 11.36, ActiveIdx: -1
-[DEBUG] Pos: 11.48, ActiveIdx: -1
-[DEBUG] Pos: 11.57, ActiveIdx: -1
-[DEBUG] Pos: 11.66, ActiveIdx: -1
-[DEBUG] Pos: 11.76, ActiveIdx: -1
-[DEBUG] Pos: 11.85, ActiveIdx: -1
-[DEBUG] Pos: 11.98, ActiveIdx: -1
-[DEBUG] Pos: 12.15, ActiveIdx: -1
-[DEBUG] Pos: 12.17, ActiveIdx: -1
-[DEBUG] Pos: 12.28, ActiveIdx: -1
-[DEBUG] Pos: 12.38, ActiveIdx: -1
-[DEBUG] Pos: 12.47, ActiveIdx: -1
-[DEBUG] Pos: 12.58, ActiveIdx: -1
-[DEBUG] Pos: 12.68, ActiveIdx: -1
-[DEBUG] Pos: 12.78, ActiveIdx: -1
-[DEBUG] Pos: 12.88, ActiveIdx: -1
-[DEBUG] Pos: 12.98, ActiveIdx: -1
-[DEBUG] Pos: 13.08, ActiveIdx: -1
-[DEBUG] Pos: 13.18, ActiveIdx: -1
-[DEBUG] Pos: 13.24, ActiveIdx: -1
-[DEBUG] Pos: 13.38, ActiveIdx: 0
+[DEBUG] Searching Genius for: St. Chroma by Tyler
+[DEBUG] Visualizer samples ready - shape: (8691840, 2)
 [DEBUG] Set active line 0: frozenset({'active'})
-[DEBUG] Pos: 13.47, ActiveIdx: 0
-[DEBUG] Pos: 13.57, ActiveIdx: 0
-[DEBUG] Pos: 13.68, ActiveIdx: 0
-[DEBUG] Pos: 13.78, ActiveIdx: 0
-[DEBUG] Pos: 13.88, ActiveIdx: 0
-[DEBUG] Pos: 13.98, ActiveIdx: 0
-[DEBUG] Pos: 14.08, ActiveIdx: 0
-[DEBUG] Pos: 14.18, ActiveIdx: 0
-[DEBUG] Pos: 14.28, ActiveIdx: 0
-[DEBUG] Pos: 14.38, ActiveIdx: 0
-[DEBUG] Pos: 14.48, ActiveIdx: 0
-[DEBUG] Pos: 14.72, ActiveIdx: 0
-[DEBUG] Pos: 14.91, ActiveIdx: 0
-[DEBUG] Pos: 14.97, ActiveIdx: 0
-[DEBUG] Pos: 15.05, ActiveIdx: 0
-[DEBUG] Pos: 15.18, ActiveIdx: 0
-[DEBUG] Pos: 15.28, ActiveIdx: 0
-[DEBUG] Pos: 15.42, ActiveIdx: 0
-[DEBUG] Pos: 15.48, ActiveIdx: 0
-[DEBUG] Pos: 15.58, ActiveIdx: 0
-[DEBUG] Pos: 15.68, ActiveIdx: 0
-[DEBUG] Pos: 15.78, ActiveIdx: 1
 [DEBUG] Set active line 1: frozenset({'active'})
-[DEBUG] Pos: 15.88, ActiveIdx: 1
-[DEBUG] Pos: 15.98, ActiveIdx: 1
-[DEBUG] Pos: 16.07, ActiveIdx: 1
-[DEBUG] Pos: 16.18, ActiveIdx: 1
-[DEBUG] Pos: 16.28, ActiveIdx: 1
-[DEBUG] Pos: 16.38, ActiveIdx: 1
-[DEBUG] Pos: 16.48, ActiveIdx: 1
-[DEBUG] Pos: 16.58, ActiveIdx: 1
-[DEBUG] Pos: 16.67, ActiveIdx: 1
-[DEBUG] Pos: 16.78, ActiveIdx: 1
-[DEBUG] Pos: 16.90, ActiveIdx: 1
-[DEBUG] Pos: 16.98, ActiveIdx: 1
-[DEBUG] Pos: 17.08, ActiveIdx: 1
-[DEBUG] Pos: 17.18, ActiveIdx: 1
-[DEBUG] Pos: 17.28, ActiveIdx: 1
-[DEBUG] Pos: 17.38, ActiveIdx: 1
-[DEBUG] Pos: 17.48, ActiveIdx: 1
-[DEBUG] Pos: 17.58, ActiveIdx: 1
-[DEBUG] Pos: 17.68, ActiveIdx: 1
-[DEBUG] Pos: 17.78, ActiveIdx: 1
-[DEBUG] Pos: 17.88, ActiveIdx: 1
-[DEBUG] Pos: 17.98, ActiveIdx: 1
-[DEBUG] Pos: 18.08, ActiveIdx: 1
-[DEBUG] Pos: 18.18, ActiveIdx: 1
-[DEBUG] Pos: 18.26, ActiveIdx: 1
-[DEBUG] Pos: 18.38, ActiveIdx: 1
-[DEBUG] Pos: 18.48, ActiveIdx: 1
-[DEBUG] Pos: 18.58, ActiveIdx: 1
-[DEBUG] Pos: 18.68, ActiveIdx: 1
-[DEBUG] Pos: 18.78, ActiveIdx: 1
-[DEBUG] Pos: 18.88, ActiveIdx: 1
-[DEBUG] Pos: 18.97, ActiveIdx: 1
-[DEBUG] Pos: 19.08, ActiveIdx: 1
-[DEBUG] Pos: 19.18, ActiveIdx: 1
-[DEBUG] Pos: 19.27, ActiveIdx: 1
-[DEBUG] Pos: 19.38, ActiveIdx: 1
-[DEBUG] Pos: 19.48, ActiveIdx: 1
-[DEBUG] Pos: 19.58, ActiveIdx: 1
-[DEBUG] Pos: 19.68, ActiveIdx: 1
-[DEBUG] Pos: 19.78, ActiveIdx: 1
-[DEBUG] Pos: 19.88, ActiveIdx: 1
-[DEBUG] Pos: 19.97, ActiveIdx: 1
-[DEBUG] Pos: 20.07, ActiveIdx: 1
-[DEBUG] Pos: 20.17, ActiveIdx: 1
-[DEBUG] Pos: 20.25, ActiveIdx: 1
-[DEBUG] Pos: 20.38, ActiveIdx: 1
-[DEBUG] Pos: 20.48, ActiveIdx: 1
-[DEBUG] Pos: 20.57, ActiveIdx: 1
-[DEBUG] Pos: 20.68, ActiveIdx: 1
-[DEBUG] Pos: 20.78, ActiveIdx: 1
-[DEBUG] Pos: 20.88, ActiveIdx: 1
-[DEBUG] Pos: 20.97, ActiveIdx: 1
-[DEBUG] Pos: 21.08, ActiveIdx: 1
-[DEBUG] Pos: 21.18, ActiveIdx: 1
-[DEBUG] Pos: 21.28, ActiveIdx: 1
-[DEBUG] Pos: 21.38, ActiveIdx: 1
-[DEBUG] Pos: 21.48, ActiveIdx: 1
-[DEBUG] Pos: 21.57, ActiveIdx: 1
-[DEBUG] Pos: 21.68, ActiveIdx: 1
-[DEBUG] Pos: 21.83, ActiveIdx: 1
-[DEBUG] Pos: 21.87, ActiveIdx: 1
-[DEBUG] Pos: 21.96, ActiveIdx: 1
-[DEBUG] Pos: 22.06, ActiveIdx: 1
-[DEBUG] Pos: 22.18, ActiveIdx: 1
-[DEBUG] Pos: 22.27, ActiveIdx: 1
-[DEBUG] Pos: 22.38, ActiveIdx: 1
-[DEBUG] Pos: 22.48, ActiveIdx: 1
-[DEBUG] Pos: 22.58, ActiveIdx: 1
-[DEBUG] Pos: 22.68, ActiveIdx: 1
-[DEBUG] Pos: 22.77, ActiveIdx: 1
-[DEBUG] Pos: 22.88, ActiveIdx: 1
+[INFO] Found Genius song ID: 10998014
+[INFO] Found Genius song ID: 10998014
+[INFO] Translating 10 annotations...
+[DEBUG] Set active line 2: frozenset({'active'})
+[INFO] Fetched 10 annotations for St. Chroma (feat. Daniel Caesar)
+[DEBUG] Set active line 3: frozenset({'active'})
+[DEBUG] Set active line 4: frozenset({'active'})
+[DEBUG] Set active line 5: frozenset({'active'})
+[DEBUG] Set active line 6: frozenset({'active'})
+[DEBUG] Set active line 7: frozenset({'active'})
+[DEBUG] Set active line 8: frozenset({'active'})
+[DEBUG] Set active line 9: frozenset({'active'})
+[DEBUG] Set active line 10: frozenset({'active'})
+[DEBUG] Set active line 11: frozenset({'active'})
+[DEBUG] Set active line 12: frozenset({'active'})
+[DEBUG] Set active line 13: frozenset({'active'})
+[DEBUG] Set active line 14: frozenset({'active'})
+[DEBUG] Set active line 15: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 16: frozenset({'active'})
+[DEBUG] Set active line 17: frozenset({'active'})
+[DEBUG] Set active line 18: frozenset({'active'})
+[DEBUG] Set active line 19: frozenset({'active'})
+[DEBUG] Set active line 20: frozenset({'active'})
+[DEBUG] Set active line 21: frozenset({'active'})
+[DEBUG] Set active line 22: frozenset({'active'})
+[DEBUG] Set active line 23: frozenset({'active'})
+[DEBUG] Set active line 24: frozenset({'active'})
+[DEBUG] Set active line 25: frozenset({'active'})
+[DEBUG] Set active line 26: frozenset({'active'})
+[DEBUG] Set active line 27: frozenset({'active'})
+[DEBUG] Set active line 28: frozenset({'active'})
+[DEBUG] Set active line 29: frozenset({'active'})
+[DEBUG] Set active line 30: frozenset({'active'})
+[DEBUG] Set active line 31: frozenset({'active'})
+[DEBUG] Set active line 32: frozenset({'active'})
+[DEBUG] Set active line 33: frozenset({'active'})
+[DEBUG] Set active line 34: frozenset({'active'})
+[DEBUG] Set active line 35: frozenset({'active'})
+[DEBUG] Set active line 36: frozenset({'active'})
+[DEBUG] Set active line 37: frozenset({'active'})
+[DEBUG] Set active line 38: frozenset({'active'})
+[DEBUG] Set active line 39: frozenset({'active'})
+[DEBUG] Set active line 40: frozenset({'active'})
+[DEBUG] Set active line 41: frozenset({'active'})
+[DEBUG] Set active line 42: frozenset({'active'})
+[DEBUG] Set active line 43: frozenset({'active'})
+[DEBUG] Set active line 44: frozenset({'active'})
+[DEBUG] Set active line 45: frozenset({'active'})
