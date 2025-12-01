@@ -3,7 +3,7 @@
 pygame 2.6.1 (SDL 2.28.4, Python 3.12.10)
 Hello from the pygame community. https://www.pygame.org/contribute.html
 [DEBUG] app.py imports completed successfully
-[DEBUG] CSS path: C:\Users\admin\OneDrive\Desktop\muker-CLI\muker\ui\styles.tcss
+[DEBUG] CSS path: C:\Users\admin\OneDrive\Desktop\muker-cli\muker\ui\styles.tcss
 [DEBUG] CSS file exists: True
 [DEBUG] Starting Muker application...
 [DEBUG] Initializing MukerApp...
@@ -13,7 +13,7 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 [DEBUG] pygame.mixer initialized - volume: 70%
 [DEBUG] Creating PlaylistManager...
 [DEBUG] Creating MusicLibrary...
-[INFO] Loaded environment variables from C:\Users\admin\OneDrive\Desktop\muker-CLI\.env
+[INFO] Loaded environment variables from C:\Users\admin\OneDrive\Desktop\muker-cli\.env
 [INFO] Spotify API client initialized successfully
 [INFO] Spotify Lyrics API configured: https://spotify-lyrics-api-psi-opal.vercel.app
 [INFO] Spotify metadata enrichment enabled
@@ -44,42 +44,73 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 [DEBUG] PlayerControls created
 [DEBUG] compose() complete
 [DEBUG] App mounted
-[DEBUG] Volume changed to 20%
+[DEBUG] Volume changed to 15%
 [DEBUG] Music folder exists: True
 [DEBUG] Music folder path: C:\Users\admin\Music
-[DEBUG] Found 4 MP3 files in C:\Users\admin\Music
+[DEBUG] Found 5 MP3 files in C:\Users\admin\Music
 [DEBUG]   - Blind.mp3
+[DEBUG]   - Drake - Headlines (320 KBps).mp3
 [DEBUG]   - Save Your Tears.mp3
 [DEBUG]   - St. Chroma (feat. Daniel Caesar) - Tyler, The Creator - SoundLoadMate.com.mp3
 [DEBUG]   - Thrusting.com.mp3
 [DEBUG] Starting scan of directory: C:\Users\admin\Music
 [INFO] Enriched track from Spotify: The Weeknd - Blinding Lights
+[INFO] Enriched track from Spotify: Drake - Headlines
 [INFO] Enriched track from Spotify: The Weeknd, Ariana Grande - save your tears
 [INFO] Enriched track from Spotify: Tyler, The Creator, Daniel Caesar - St. Chroma (feat. Daniel Caesar)
 [INFO] Enriched track from Spotify: Internet Money, Swae Lee, Future - Thrusting Ft. Swae Lee & Future
 [INFO] Enriched track from Spotify: BoyWithUke - Toxic
-[DEBUG] Found 6 tracks
-[DEBUG] Added 6 tracks to playlist
+[DEBUG] Found 7 tracks
+[DEBUG] Added 7 tracks to playlist
 [DEBUG] Forcing playlist view update
 [DEBUG] First track: Toxic
 [DEBUG] Loading first track: C:\Users\admin\Music\Toxic.flac
-[DEBUG] Searching Genius for: Toxic by BoyWithUke
-[DEBUG-LYRICS-API] Raw response: {'error': False, 'syncType': 'LINE_SYNCED', 'lines': [{'timeTag': '00:00.27', 'words': 'All my friends are toxic, all ambitionless'}, {'timeTag': '00:03.21', 'words': 'So rude and always negative'}, {'timeTag': '00:06.15', 'words': "I need new friends, but it's not that quick and easy"}, {'timeTag': '00:09.59', 'words': "Oh, I'm drowning, let me breathe"}, {'timeTag': '00:12.13', 'words': "I'm better off all by myself"}, {'timeTag': '00:14.59', 'words': "Though I'm feeling kinda empty without somebody else"}, {'timeTag': '00:17.05', 'words': 'Oh, I hear you crying out for help'}, {'timeTag': '00:19.86', 'words': 'But you never showed for me when I was ringing your cellphone'}, {'timeTag': '00:23.01', 'words': "Oh, you don't know how it feels to be alone"}, {'timeTag': '00:27.08', 'words': "Baby, oh, I'll make you know, I'll make you know, oh"}, {'timeTag': '00:33.91', 'words': '♪'}, {'timeTag': '00:36.67', 'words': "I'm drowning, let me breathe"}, {'timeTag': '00:41.99', 'words': "I'm drowning, let me breathe"}, {'timeTag': '00:47.31', 'words': "I'm drowning, let me breathe"}, {'timeTag': '00:52.70', 'words': "I'm drowning, let me breathe"}, {'timeTag': '00:54.82', 'words': "But life is immaculate, backin' it up a bit"}, {'timeTag': '00:57.69', 'words': "Countin' my hours and knocking on wood"}, {'timeTag': '01:00.16', 'words': "Avoiding my opposites, chewin' on chocolate"}, {'timeTag': '01:02.92', 'words': 'Had a bit limited time, but I should'}, {'timeTag': '01:05.44', 'words': "Be good for a minute, don't want to admit it"}, {'timeTag': '01:08.06', 'words': "I'm running on seconds, I'm rigid, I'm screwed"}, {'timeTag': '01:10.60', 'words': "Don't know what to do, I'm thinking of you"}, {'timeTag': '01:13.31', 'words': "I'm drinking up bottles and bottles of booze"}, {'timeTag': '01:16.05', 'words': "I'm better off all by myself"}, {'timeTag': '01:18.60', 'words': "Though I'm feeling kinda empty without somebody else"}, {'timeTag': '01:21.34', 'words': 'Oh, I hear you crying out for help'}, {'timeTag': '01:23.82', 'words': 'But you never showed for me when I was ringing your cellphone'}, {'timeTag': '01:27.07', 'words': "Oh, you don't know how it feels to be alone"}, {'timeTag': '01:30.91', 'words': "Baby, oh, I'll make you know, I'll make you know, oh"}, {'timeTag': '01:37.33', 'words': 'I fell into your river'}, {'timeTag': '01:39.92', 'words': "That's where you told me lies"}, {'timeTag': '01:42.63', 'words': "You said that I'd feel better"}, {'timeTag': '01:44.91', 'words': 'But this is where good guys die'}, {'timeTag': '01:47.74', 'words': 'You took my pride away, but'}, {'timeTag': '01:50.38', 'words': 'You cannot take my light'}, {'timeTag': '01:53.10', 'words': "I'll find another way"}, {'timeTag': '01:55.58', 'words': "But now you're takin' my light"}, {'timeTag': '01:58.38', 'words': "Don't you see how I"}, {'timeTag': '02:01.45', 'words': "I'm better off all by myself"}, {'timeTag': '02:03.84', 'words': "Though I'm feeling kinda empty without somebody else"}, {'timeTag': '02:06.69', 'words': 'Oh, I hear you crying out for help'}, {'timeTag': '02:09.34', 'words': 'But you never showed for me when I was ringing your cellphone'}, {'timeTag': '02:12.11', 'words': "Oh, you don't know how it feels to be alone"}, {'timeTag': '02:16.39', 'words': "Baby, oh, I'll make you know, I'll make you know, oh"}, {'timeTag': '02:22.85', 'words': "I'm better off all by myself"}, {'timeTag': '02:25.22', 'words': "Though I'm feeling kinda empty without somebody else"}, {'timeTag': '02:27.92', 'words': 'Oh, I hear you crying out for help'}, {'timeTag': '02:30.65', 'words': "But you never showed for me when I was ringin' your cellphone"}, {'timeTag': '02:33.68', 'words': "Oh, you don't know how it feels to be alone"}, {'timeTag': '02:37.54', 'words': "Baby, oh, I'll make you know, I'll make you know, oh"}, {'timeTag': '02:40.77', 'words': ''}]}
-[INFO] Fetched lyrics for track 2gQPv5jvVPqU2a9HhMNO1v (format: lrc)
+[INFO] Loaded lyrics for track 2gQPv5jvVPqU2a9HhMNO1v from cache
 [DEBUG] Loading track: C:\Users\admin\Music\Toxic.flac
 [DEBUG] Track loaded successfully. Duration: 168.02s
 [DEBUG] Stream info - channels: 2, sample_rate: 44100
 [DEBUG] Starting playback of Toxic
 [DEBUG] Playback thread started
-[DEBUG] Playback thread launched
 [DEBUG] Loading file with pygame.mixer: C:\Users\admin\Music\Toxic.flac
-[DEBUG] pygame.mixer playback started - volume: 20%
+[DEBUG] Playback thread launched
+[DEBUG] pygame.mixer playback started - volume: 15%
 [DEBUG] Visualizer samples ready - shape: (7409682, 2)
 [DEBUG] Lyrics loaded. Synced: True, Lines: 0
-[DEBUG] Searching Genius for: Toxic by BoyWithUke
+[DEBUG] Lyrics loaded. Synced: True, Lines: 50
 [DEBUG] Set active line 0: frozenset({'active'})
+[DEBUG] Searching Genius for: Toxic by BoyWithUke
+[DEBUG] Set active line 1: frozenset({'active'})
 [INFO] Found Genius song ID: 7104629
-[INFO] Found Genius song ID: 7104629
+[DEBUG] on_playlist_view_track_selected called
+[DEBUG] Selected track: save your tears - The Weeknd, Ariana Grande
+[DEBUG] Searching Genius for: save your tears by The Weeknd
+[DEBUG-LYRICS-API] Raw response: {'error': False, 'syncType': 'LINE_SYNCED', 'lines': [{'timeTag': '00:01.65', 'words': 'Ooh (ooh)'}, {'timeTag': '00:04.85', 'words': 'Na-na, yeah'}, {'timeTag': '00:08.55', 'words': 'I saw you dancing in a crowded room (uh)'}, {'timeTag': '00:12.75', 'words': "You look so happy when I'm not with you"}, {'timeTag': '00:16.58', 'words': 'But then you saw me, caught you by surprise'}, {'timeTag': '00:20.82', 'words': 'A single teardrop falling from your eye'}, {'timeTag': '00:25.02', 'words': "I don't know why I run away (oh-oh, oh-oh-oh)"}, {'timeTag': '00:33.43', 'words': "I'll make you cry when I run away (oh-oh, oh-oh-oh)"}, {'timeTag': '00:41.18', 'words': "Take me back 'cause I wanna stay"}, {'timeTag': '00:45.33', 'words': 'Save your tears for another'}, {'timeTag': '00:48.30', 'words': 'Save your tears for another day (oh-oh, oh-oh-oh)'}, {'timeTag': '00:56.62', 'words': 'Save your tears for another day (mm)'}, {'timeTag': '01:05.53', 'words': 'Met you once under a Pisces moon'}, {'timeTag': '01:09.48', 'words': "I kept my distance 'cause I know that you"}, {'timeTag': '01:13.88', 'words': "Don't like when I'm with nobody else"}, {'timeTag': '01:17.75', 'words': "I couldn't help it, I put you through hell"}, {'timeTag': '01:22.09', 'words': "I don't know why I run away, oh, boy (run away, oh-oh, oh-oh-oh)"}, {'timeTag': '01:30.13', 'words': "I'll make you cry when I run away (away, oh-oh, oh-oh-oh)"}, {'timeTag': '01:38.07', 'words': "Boy, take me back 'cause I wanna stay"}, {'timeTag': '01:42.46', 'words': 'Save your tears for another'}, {'timeTag': '01:46.05', 'words': "I realize that it's much too late"}, {'timeTag': '01:50.43', 'words': 'And you deserve someone better'}, {'timeTag': '01:53.35', 'words': 'Save your tears for another day (oh-oh, oh-oh-oh)'}, {'timeTag': '02:01.54', 'words': 'Save your tears for another day (oh-oh, oh-oh-oh)'}, {'timeTag': '02:09.90', 'words': '(Bum, bum, bum, bum, bum)'}, {'timeTag': '02:11.27', 'words': "I don't know why I run away"}, {'timeTag': '02:17.68', 'words': '(Bum, bum, bum, bum, bum)'}, {'timeTag': '02:19.31', 'words': "I'll make you cry when I run away (save)"}, {'timeTag': '02:26.19', 'words': 'Save your tears for another day (ooh)'}, {'timeTag': '02:32.16', 'words': 'Ooh, girl, I said (oh-oh, oh-oh-oh, okay)'}, {'timeTag': '02:34.11', 'words': 'Save (save) your (your) tears for another day (oh yeah, yeah)'}, {'timeTag': '02:42.53', 'words': 'Save your tears for another day (oh-oh, oh-oh-oh)'}, {'timeTag': '02:50.51', 'words': 'Save your tears for another day (oh-oh, oh-oh-oh)'}, {'timeTag': '02:58.57', 'words': 'Save your tears for another day'}, {'timeTag': '03:02.69', 'words': ''}]}
+[INFO] Fetched lyrics for track 1oFAF1hdPOickyHgbuRjyX (format: lrc)
+[DEBUG] Stopping playback
+[DEBUG] Playback completed!
+[DEBUG] Loading track: C:\Users\admin\Music\Save Your Tears.mp3
+[DEBUG] Track loaded successfully. Duration: 191.01s
+[DEBUG] Stream info - channels: 2, sample_rate: 44100
+[DEBUG] Starting playback of save your tears
+[DEBUG] Playback thread started
+[DEBUG] Playback thread launched
+[DEBUG] Loading file with pygame.mixer: C:\Users\admin\Music\Save Your Tears.mp3
+[DEBUG] pygame.mixer playback started - volume: 15%
+[DEBUG] Visualizer samples ready - shape: (9513216, 2)
+[DEBUG] Lyrics loaded. Synced: True, Lines: 0
+[DEBUG] Lyrics loaded. Synced: True, Lines: 34
+[DEBUG] Searching Genius for: save your tears by The Weeknd
+[DEBUG] Set active line 0: frozenset({'active'})
+[INFO] Found Genius song ID: 4694697
+[INFO] Found Genius song ID: 4694697
+[INFO] Translating 6 annotations...
+[DEBUG] Set active line 1: frozenset({'active'})
+[INFO] Fetched 6 annotations for save your tears
+[DEBUG] Updating theme colors: Primary=#bc8444, Secondary=#6a3119
+[DEBUG] Set active line 2: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 3: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 4: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 5: frozenset({'has-annotation', 'active'})
 [DEBUG] on_playlist_view_track_selected called
 [DEBUG] Selected track: St. Chroma (feat. Daniel Caesar) - Tyler, The Creator, Daniel Caesar
 [DEBUG] Searching Genius for: St. Chroma by Tyler
@@ -94,57 +125,165 @@ Hello from the pygame community. https://www.pygame.org/contribute.html
 [DEBUG] Playback thread started
 [DEBUG] Playback thread launched
 [DEBUG] Loading file with pygame.mixer: C:\Users\admin\Music\St. Chroma (feat. Daniel Caesar) - Tyler, The Creator - SoundLoadMate.com.mp3
-[DEBUG] pygame.mixer playback started - volume: 20%
+[DEBUG] pygame.mixer playback started - volume: 15%
 [DEBUG] Lyrics loaded. Synced: True, Lines: 0
-[DEBUG] Searching Genius for: St. Chroma by Tyler
 [DEBUG] Visualizer samples ready - shape: (8691840, 2)
+[DEBUG] Lyrics loaded. Synced: True, Lines: 59
+[DEBUG] Searching Genius for: St. Chroma by Tyler
+[DEBUG] Set active line 0: frozenset({'active'})
+[INFO] Found Genius song ID: 10998014
+[INFO] Found Genius song ID: 10998014
+[DEBUG] Set active line 1: frozenset({'active'})
+[INFO] Translating 18 annotations...
+[ERROR] Translation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-2.5-flash-lite\nPlease retry in 6.04110078s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6s'}]}}
+[ERROR] Translation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-2.5-flash-lite\nPlease retry in 6.041122128s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6s'}]}}
+[ERROR] Translation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-2.5-flash-lite\nPlease retry in 6.041224691s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6s'}]}}
+[ERROR] Translation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-2.5-flash-lite\nPlease retry in 6.041067377s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6s'}]}}
+[ERROR] Translation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-2.5-flash-lite\nPlease retry in 6.041100509s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6s'}]}}
+[ERROR] Translation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-2.5-flash-lite\nPlease retry in 6.038829939s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6s'}]}}
+[ERROR] Translation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-2.5-flash-lite\nPlease retry in 6.040923824s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6s'}]}}
+[ERROR] Translation failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-2.5-flash-lite\nPlease retry in 6.04109974s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash-lite', 'location': 'global'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '6s'}]}}
+[DEBUG] Set active line 2: frozenset({'active'})
+[INFO] Fetched 18 annotations for St. Chroma (feat. Daniel Caesar)
+[DEBUG] Updating theme colors: Primary=#00c763, Secondary=#3ae991
+[DEBUG] Set active line 3: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 4: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 5: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 6: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 7: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 8: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 9: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 10: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 11: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 12: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 13: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 14: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 15: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 16: frozenset({'has-annotation', 'active'})
+[DEBUG] on_playlist_view_track_selected called
+[DEBUG] Selected track: Headlines - Drake
+[INFO] Loaded lyrics for track 6LxSe8YmdPxy095Ux6znaQ from cache
+[DEBUG] Stopping playback
+[DEBUG] Playback completed!
+[DEBUG] Loading track: C:\Users\admin\Music\Drake - Headlines (320 KBps).mp3
+[DEBUG] Track loaded successfully. Duration: 235.99s
+[DEBUG] Stream info - channels: 2, sample_rate: 44100
+[DEBUG] Starting playback of Headlines
+[DEBUG] Playback thread started
+[DEBUG] Loading file with pygame.mixer: C:\Users\admin\Music\Drake - Headlines (320 KBps).mp3
+[DEBUG] Playback thread launched
+[DEBUG] pygame.mixer playback started - volume: 15%
+[DEBUG] Visualizer samples ready - shape: (10411776, 2)
+[DEBUG] Lyrics loaded. Synced: True, Lines: 0
+[DEBUG] Lyrics loaded. Synced: True, Lines: 67
+[INFO] Loaded annotations for 'Headlines' from cache
+[DEBUG] Updating theme colors: Primary=#968868, Secondary=#4e4636
 [DEBUG] Set active line 0: frozenset({'active'})
 [DEBUG] Set active line 1: frozenset({'active'})
-[INFO] Found Genius song ID: 10998014
-[INFO] Found Genius song ID: 10998014
-[INFO] Translating 10 annotations...
-[DEBUG] Set active line 2: frozenset({'active'})
-[INFO] Fetched 10 annotations for St. Chroma (feat. Daniel Caesar)
-[DEBUG] Set active line 3: frozenset({'active'})
-[DEBUG] Set active line 4: frozenset({'active'})
-[DEBUG] Set active line 5: frozenset({'active'})
-[DEBUG] Set active line 6: frozenset({'active'})
+[DEBUG] Set active line 2: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 3: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 4: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 5: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 6: frozenset({'has-annotation', 'active'})
 [DEBUG] Set active line 7: frozenset({'active'})
 [DEBUG] Set active line 8: frozenset({'active'})
-[DEBUG] Set active line 9: frozenset({'active'})
+[DEBUG] Set active line 9: frozenset({'has-annotation', 'active'})
 [DEBUG] Set active line 10: frozenset({'active'})
-[DEBUG] Set active line 11: frozenset({'active'})
+[DEBUG] Set active line 11: frozenset({'has-annotation', 'active'})
 [DEBUG] Set active line 12: frozenset({'active'})
 [DEBUG] Set active line 13: frozenset({'active'})
 [DEBUG] Set active line 14: frozenset({'active'})
-[DEBUG] Set active line 15: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 15: frozenset({'active'})
 [DEBUG] Set active line 16: frozenset({'active'})
-[DEBUG] Set active line 17: frozenset({'active'})
+[DEBUG] Set active line 17: frozenset({'has-annotation', 'active'})
 [DEBUG] Set active line 18: frozenset({'active'})
-[DEBUG] Set active line 19: frozenset({'active'})
-[DEBUG] Set active line 20: frozenset({'active'})
-[DEBUG] Set active line 21: frozenset({'active'})
-[DEBUG] Set active line 22: frozenset({'active'})
-[DEBUG] Set active line 23: frozenset({'active'})
-[DEBUG] Set active line 24: frozenset({'active'})
-[DEBUG] Set active line 25: frozenset({'active'})
-[DEBUG] Set active line 26: frozenset({'active'})
-[DEBUG] Set active line 27: frozenset({'active'})
-[DEBUG] Set active line 28: frozenset({'active'})
-[DEBUG] Set active line 29: frozenset({'active'})
-[DEBUG] Set active line 30: frozenset({'active'})
-[DEBUG] Set active line 31: frozenset({'active'})
-[DEBUG] Set active line 32: frozenset({'active'})
-[DEBUG] Set active line 33: frozenset({'active'})
+[DEBUG] Set active line 19: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 20: frozenset({'has-annotation', 'active'})
+[DEBUG] on_playlist_view_track_selected called
+[DEBUG] Selected track: Thrusting Ft. Swae Lee & Future - Internet Money, Swae Lee, Future
+[DEBUG] Searching Genius for: Thrusting Ft. Swae Lee & Future by Internet Money
+[INFO] No Genius match for Thrusting Ft. Swae Lee & Future
+[DEBUG-LYRICS-API] Raw response: {'error': False, 'syncType': 'LINE_SYNCED', 'lines': [{'timeTag': '00:02.94', 'words': 'Whip fit four or ifve in it'}, {'timeTag': '00:07.10', 'words': "GPS, so you're not misguided (hey, hey)"}, {'timeTag': '00:11.40', 'words': ''}, {'timeTag': '00:13.48', 'words': 'Internet Money, bitch'}, {'timeTag': '00:16.20', 'words': '♪'}, {'timeTag': '00:18.78', 'words': 'Uh (yeah), hey (yeah)'}, {'timeTag': '00:22.02', 'words': 'Pull up in a whip, fit four or five in it (five in it)'}, {'timeTag': '00:26.93', 'words': "GPS, so you're not misguided (guided)"}, {'timeTag': '00:31.92', 'words': 'Run with me, you can go where the sky is'}, {'timeTag': '00:36.81', 'words': "Tell me what you want, girl, don't be silent (hey, hey)"}, {'timeTag': '00:42.09', 'words': 'When you with me, girl, you feel enlightened (ooh)'}, {'timeTag': '00:46.71', 'words': "Don't be scared, baby, don't be frightened (oh, oh)"}, {'timeTag': '00:51.93', 'words': "Rollin' up the dope, baby, I get the highest (oh)"}, {'timeTag': '00:56.37', 'words': "I said don't hold back, just enjoy the ride"}, {'timeTag': '01:01.15', 'words': "Thrustin', doin' it right"}, {'timeTag': '01:06.62', 'words': "I know a nigga can be so connivin' (deprivin')"}, {'timeTag': '01:11.52', 'words': "I need your attention undivided ('vided)"}, {'timeTag': '01:16.58', 'words': 'You want the vibe, I can provide it (provide it)'}, {'timeTag': '01:21.59', 'words': "Thrustin', thrustin' (thrustin')"}, {'timeTag': '01:26.30', 'words': "Bustin', she bustin' (buss, buss it, buss it)"}, {'timeTag': '01:31.13', 'words': 'Pussy so good that I might sing (ooh)'}, {'timeTag': '01:35.86', 'words': 'He a PYT, she a young hot thing'}, {'timeTag': '01:38.76', 'words': "Got me thrustin', the thrust got her bustin'"}, {'timeTag': '01:40.99', 'words': "Got me surfin' through the pussy like a jet-ski"}, {'timeTag': '01:43.62', 'words': 'Banana-colored rims on the Bentley'}, {'timeTag': '01:46.18', 'words': 'Got no key for the ignition, woah, woah, woah, woah'}, {'timeTag': '01:48.78', 'words': 'Made our own religion, our own rules'}, {'timeTag': '01:51.26', 'words': 'Made our own religion, our own rules'}, {'timeTag': '01:53.73', 'words': 'I bought her fresh pearls and Chanel Coco'}, {'timeTag': '01:56.03', 'words': "Whatever we gon' do, don't irk my soul"}, {'timeTag': '01:58.64', 'words': "Goin' beyond, beyond, beyond (goin' beyond)"}, {'timeTag': '02:03.57', 'words': "Goin' beyond, beyond, beyond (goin' beyond)"}, {'timeTag': '02:08.55', 'words': "Goin' beyond, beyond, beyond (PYT)"}, {'timeTag': '02:13.19', 'words': 'I done took one off the bench and turned her to a starter'}, {'timeTag': '02:15.58', 'words': "Changin' my rings for the quarters (woah, Freebandz)"}, {'timeTag': '02:20.73', 'words': "I ain't fallin', but I love that body (I love that)"}, {'timeTag': '02:25.86', 'words': "I ain't fallin', but I love me a hottie"}, {'timeTag': '02:30.80', 'words': "Trust me, don't think about it"}, {'timeTag': '02:35.77', 'words': "Cross me, don't think about it"}, {'timeTag': '02:40.18', 'words': "Thrustin', doin' it right"}, {'timeTag': '02:45.61', 'words': "I know a nigga can be so conniving (deprivin')"}, {'timeTag': '02:50.57', 'words': "I need your attention undivided ('vided)"}, {'timeTag': '02:55.50', 'words': 'You want the vibe, I can provide it (provide it)'}, {'timeTag': '03:00.35', 'words': "Thrustin', thrustin' (thrustin')"}, {'timeTag': '03:05.34', 'words': "Bustin', she bustin' (buss, buss it, buss it)"}, {'timeTag': '03:10.15', 'words': 'Pussy so good that I might sing (ooh)'}, {'timeTag': '03:14.77', 'words': 'He a PYT, she a young hot thing'}, {'timeTag': '03:19.97', 'words': "I'm lustin', so follow me (yeah)"}, {'timeTag': '03:24.84', 'words': 'Gyal feisty, shawty feisty (hey)'}, {'timeTag': '03:29.87', 'words': "And she high class, so that's pricey (pricey)"}, {'timeTag': '03:31.58', 'words': 'This a big, big, big one right here'}, {'timeTag': '03:33.29', 'words': "Ya dig what I'm sayin'? This massive"}, {'timeTag': '03:34.73', 'words': 'I fuck her so good that she charge a small fee (Global)'}, {'timeTag': '03:36.94', 'words': ''}]}
+[INFO] Fetched lyrics for track 2B1xNPxHSJ4EwOsCUvaTxT (format: lrc)
+[DEBUG] Stopping playback
+[DEBUG] Playback completed!
+[DEBUG] Loading track: C:\Users\admin\Music\Thrusting.com.mp3
+[DEBUG] Track loaded successfully. Duration: 222.68s
+[DEBUG] Stream info - channels: 2, sample_rate: 44100
+[DEBUG] Starting playback of Thrusting Ft. Swae Lee & Future
+[DEBUG] Playback thread started
+[DEBUG] Playback thread launched
+[DEBUG] Loading file with pygame.mixer: C:\Users\admin\Music\Thrusting.com.mp3
+[DEBUG] pygame.mixer playback started - volume: 15%
+[DEBUG] Visualizer samples ready - shape: (9824256, 2)
+[DEBUG] Lyrics loaded. Synced: True, Lines: 0
+[DEBUG] Lyrics loaded. Synced: True, Lines: 52
+[DEBUG] Searching Genius for: Thrusting Ft. Swae Lee & Future by Internet Money
+[INFO] No Genius match for Thrusting Ft. Swae Lee & Future
+[DEBUG] Set active line 0: frozenset({'active'})
+[DEBUG] on_playlist_view_track_selected called
+[DEBUG] Selected track: Blinding Lights - The Weeknd
+[DEBUG] Searching Genius for: Blinding Lights by The Weeknd
+[DEBUG-LYRICS-API] Raw response: {'error': False, 'syncType': 'LINE_SYNCED', 'lines': [{'timeTag': '00:13.34', 'words': 'Yeah'}, {'timeTag': '00:15.72', 'words': '♪'}, {'timeTag': '00:26.90', 'words': "I've been tryna call"}, {'timeTag': '00:29.68', 'words': "I've been on my own for long enough"}, {'timeTag': '00:32.64', 'words': 'Maybe you can show me how to love, maybe'}, {'timeTag': '00:38.19', 'words': "I'm goin' through withdrawals"}, {'timeTag': '00:40.83', 'words': "You don't even have to do too much"}, {'timeTag': '00:43.88', 'words': 'You can turn me on with just a touch, baby'}, {'timeTag': '00:49.31', 'words': 'I look around and'}, {'timeTag': '00:50.56', 'words': "Sin City's cold and empty (oh)"}, {'timeTag': '00:53.45', 'words': "No one's around to judge me (oh)"}, {'timeTag': '00:56.16', 'words': "I can't see clearly when you're gone"}, {'timeTag': '01:00.72', 'words': "I said, ooh, I'm blinded by the lights"}, {'timeTag': '01:06.55', 'words': "No, I can't sleep until I feel your touch"}, {'timeTag': '01:11.73', 'words': "I said, ooh, I'm drowning in the night"}, {'timeTag': '01:17.82', 'words': "Oh, when I'm like this, you're the one I trust"}, {'timeTag': '01:22.04', 'words': '(Hey, hey, hey)'}, {'timeTag': '01:25.95', 'words': '♪'}, {'timeTag': '01:34.30', 'words': "I'm running out of time"}, {'timeTag': '01:37.10', 'words': "'Cause I can see the sun light up the sky"}, {'timeTag': '01:40.01', 'words': 'So I hit the road in overdrive, baby, oh'}, {'timeTag': '01:46.82', 'words': "The city's cold and empty (oh)"}, {'timeTag': '01:49.63', 'words': "No one's around to judge me (oh)"}, {'timeTag': '01:52.29', 'words': "I can't see clearly when you're gone"}, {'timeTag': '01:56.98', 'words': "I said, ooh, I'm blinded by the lights"}, {'timeTag': '02:02.87', 'words': "No, I can't sleep until I feel your touch"}, {'timeTag': '02:08.05', 'words': "I said, ooh, I'm drowning in the night"}, {'timeTag': '02:13.80', 'words': "Oh, when I'm like this, you're the one I trust"}, {'timeTag': '02:19.33', 'words': "I'm just walking by to let you know (by to let you know)"}, {'timeTag': '02:22.15', 'words': 'I could never say it on the phone (say it on the phone)'}, {'timeTag': '02:25.36', 'words': 'Will never let you go this time (ooh)'}, {'timeTag': '02:30.49', 'words': "I said, ooh, I'm blinded by the lights"}, {'timeTag': '02:36.49', 'words': "No, I can't sleep until I feel your touch"}, {'timeTag': '02:40.81', 'words': '(Hey, hey, hey)'}, {'timeTag': '02:44.83', 'words': '♪'}, {'timeTag': '02:51.99', 'words': '(Hey, hey, hey)'}, {'timeTag': '02:56.05', 'words': '♪'}, {'timeTag': '03:03.76', 'words': "I said, ooh, I'm blinded by the lights"}, {'timeTag': '03:09.94', 'words': "No, I can't sleep until I feel your touch"}, {'timeTag': '03:13.68', 'words': ''}]}
+[INFO] Fetched lyrics for track 6qYkmqFsXbj8CQjAdbYz07 (format: lrc)
+[DEBUG] Stopping playback
+[DEBUG] Playback completed!
+[DEBUG] Loading track: C:\Users\admin\Music\Blind.flac
+[DEBUG] Track loaded successfully. Duration: 200.04s
+[DEBUG] Stream info - channels: 2, sample_rate: 44100
+[DEBUG] Starting playback of Blinding Lights
+[DEBUG] Playback thread started
+[DEBUG] Playback thread launched
+[DEBUG] Loading file with pygame.mixer: C:\Users\admin\Music\Blind.flac
+[DEBUG] pygame.mixer playback started - volume: 15%
+[DEBUG] Visualizer samples ready - shape: (8941008, 2)
+[DEBUG] Lyrics loaded. Synced: True, Lines: 0
+[DEBUG] Lyrics loaded. Synced: True, Lines: 39
+[DEBUG] Searching Genius for: Blinding Lights by The Weeknd
+[INFO] Found Genius song ID: 5049949
+[INFO] Found Genius song ID: 5049949
+[INFO] Translating 11 annotations...
+[INFO] Fetched 11 annotations for Blinding Lights
+[DEBUG] Updating theme colors: Primary=#cc7813, Secondary=#7c0d04
+[DEBUG] Set active line 0: frozenset({'active'})
+[DEBUG] Set active line 1: frozenset({'active'})
+[DEBUG] Set active line 2: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 3: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 4: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 5: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 6: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 7: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 8: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 9: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 10: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 11: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 12: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 13: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 14: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 15: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 16: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 17: frozenset({'active'})
+[DEBUG] Set active line 18: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 19: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 20: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 21: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 22: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 23: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 24: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 25: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 26: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 27: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 28: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 29: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 30: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 31: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 32: frozenset({'has-annotation', 'active'})
+[DEBUG] Set active line 33: frozenset({'has-annotation', 'active'})
 [DEBUG] Set active line 34: frozenset({'active'})
-[DEBUG] Set active line 35: frozenset({'active'})
+[DEBUG] Set active line 35: frozenset({'has-annotation', 'active'})
 [DEBUG] Set active line 36: frozenset({'active'})
-[DEBUG] Set active line 37: frozenset({'active'})
-[DEBUG] Set active line 38: frozenset({'active'})
-[DEBUG] Set active line 39: frozenset({'active'})
-[DEBUG] Set active line 40: frozenset({'active'})
-[DEBUG] Set active line 41: frozenset({'active'})
-[DEBUG] Set active line 42: frozenset({'active'})
-[DEBUG] Set active line 43: frozenset({'active'})
-[DEBUG] Set active line 44: frozenset({'active'})
-[DEBUG] Set active line 45: frozenset({'active'})
+[DEBUG] Set active line 37: frozenset({'has-annotation', 'active'})
+[DEBUG] Cleaning up player resources
+[DEBUG] Stopping playback
+[DEBUG] Playback completed!
+[DEBUG] app.run() returned normally

@@ -177,6 +177,81 @@ class MukerApp(App):
         yield Footer()
         print("[DEBUG] compose() complete")
 
+    def update_theme_colors(self, primary: str, secondary: str):
+        """Update application theme colors.
+
+        Args:
+            primary: Primary color hex string
+            secondary: Secondary color hex string
+        """
+        print(f"[DEBUG] Updating theme colors: Primary={primary}, Secondary={secondary}")
+        try:
+            # Validate color strings roughly
+            if not primary or not secondary:
+                return
+            if not primary.startswith('#') or not secondary.startswith('#'):
+                return
+
+            # Directly update styles of widgets since set_variable is not available
+            
+            # 1. Visualizer Area
+            try:
+                viz_container = self.query_one("#visualizer-container")
+                viz_container.styles.border = ("double", primary)
+                
+                visualizer = self.query_one("VisualizerWidget")
+                visualizer.styles.color = primary
+            except Exception:
+                pass
+
+            # 2. Playlist Panel
+            try:
+                self.query_one("#playlist-panel").styles.border = ("solid", primary)
+            except Exception:
+                pass
+
+            # 3. Library Panel
+            try:
+                self.query_one("#library-panel").styles.border = ("solid", secondary)
+            except Exception:
+                pass
+
+            # 4. Lyrics Panel Container
+            try:
+                # Note: In styles.tcss it is #lyrics-container, but in compose it might be #lyrics-panel
+                # Checking compose: with Vertical(id="lyrics-panel"): ...
+                # But styles.tcss has #lyrics-container. Let's try both or check compose.
+                # Compose uses id="lyrics-panel" for the Vertical container.
+                # Let's update #lyrics-panel based on logic.
+                self.query_one("#lyrics-panel").styles.border = ("solid", secondary)
+            except Exception:
+                pass
+
+            # 5. Controls Area
+            try:
+                self.query_one("#controls-container").styles.border = ("heavy", secondary)
+            except Exception:
+                pass
+
+            # 6. Header & Footer
+            try:
+                self.query_one("Header").styles.background = primary
+                self.query_one("Footer").styles.background = secondary
+            except Exception:
+                pass
+            
+            # 7. Titles and Text
+            # Update specific text elements if needed
+            try:
+                for title in self.query("#playlist-title"):
+                    title.styles.color = secondary
+            except Exception:
+                pass
+
+            self.refresh()
+        except Exception as e:
+            print(f"[ERROR] Failed to update theme colors: {e}")
+
     async def on_mount(self):
         """Called when app is mounted."""
         print("[DEBUG] App mounted")

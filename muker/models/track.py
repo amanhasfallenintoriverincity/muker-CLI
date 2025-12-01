@@ -24,6 +24,8 @@ class Track:
     lyrics: Optional[dict] = None  # Lyrics data from Spotify
     genius_song_id: Optional[int] = None  # Genius song ID
     annotations: Optional[list] = None  # Genius annotations
+    primary_color: Optional[str] = None  # Song art primary color
+    secondary_color: Optional[str] = None  # Song art secondary color
 
     @classmethod
     def from_dict(cls, data: dict) -> 'Track':
@@ -50,7 +52,9 @@ class Track:
             spotify_track_id=data.get('spotify_track_id'),
             lyrics=data.get('lyrics'),
             genius_song_id=data.get('genius_song_id'),
-            annotations=data.get('annotations')
+            annotations=data.get('annotations'),
+            primary_color=data.get('primary_color'),
+            secondary_color=data.get('secondary_color')
         )
 
     def to_dict(self) -> dict:
@@ -74,7 +78,9 @@ class Track:
             'spotify_track_id': self.spotify_track_id,
             'lyrics': self.lyrics,
             'genius_song_id': self.genius_song_id,
-            'annotations': self.annotations
+            'annotations': self.annotations,
+            'primary_color': self.primary_color,
+            'secondary_color': self.secondary_color
         }
 
     @property

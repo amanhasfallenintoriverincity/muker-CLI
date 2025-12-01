@@ -4,6 +4,7 @@ import os
 import asyncio
 from typing import Optional, List, Dict, Any
 from muker.models.track import Track
+from muker.core.database import DatabaseManager
 
 try:
     from dotenv import load_dotenv
@@ -35,6 +36,8 @@ class GeniusService:
         self.gemini_api_key = os.getenv("GEMINI_API_KEY")
         self.gemini_client = None
         self._initialize_gemini_client()
+        
+        self.db = DatabaseManager()
 
     def _initialize_client(self):
         """Initialize Genius client if token is available."""
@@ -100,24 +103,35 @@ class GeniusService:
             return []
         
         try:
-            # lyricsgenius song_annotations returns list of (fragment, [annotations])
-            # We'll convert this to a friendlier list of dicts
-            raw_annotations = self.genius.song_annotations(song_id)
+            # Use referents endpoint directly to control pagination limit (default is often 10)
+            # Fetch up to 50 annotations (Genius usually caps popular songs around here per request)
+            response = self.genius.referents(song_id=song_id, per_page=50)
+            
             processed_annotations = []
             
-            for fragment, annotation_list in raw_annotations:
-                # Flatten annotation list (usually contains lists of strings)
-                text_content = []
-                for ann in annotation_list:
-                    if isinstance(ann, list):
-                        text_content.extend(ann)
-                    elif isinstance(ann, str):
-                        text_content.append(ann)
+            # 'response' is usually a dict with 'referents' list if successful
+            # handle both direct list return or dict wrapper depending on library version
+            referents_list = response.get('referents', []) if isinstance(response, dict) else response
+
+            for referent in referents_list:
+                fragment = referent.get('fragment', '')
+                annotations = referent.get('annotations', [])
                 
-                processed_annotations.append({
-                    "fragment": fragment,
-                    "text": "\n\n".join(text_content)
-                })
+                if not fragment or not annotations:
+                    continue
+                
+                # Usually there is one primary annotation per referent
+                first_ann = annotations[0]
+                body = first_ann.get('body', {})
+                
+                # 'plain' contains the raw text representation
+                text_content = body.get('plain', '')
+                
+                if text_content:
+                    processed_annotations.append({
+                        "fragment": fragment,
+                        "text": text_content
+                    })
                 
             return processed_annotations
         except Exception as e:
@@ -145,20 +159,38 @@ class GeniusService:
         Args:
             track: Track to enrich
         """
-        if not self.is_available() or track.annotations:
+        if track.annotations:
+            return
+
+        # Clean title/artist
+        clean_title = track.title.split('(')[0].split('-')[0].strip()
+        clean_artist = track.artist.split(',')[0].strip()
+
+        # 1. Check Cache
+        cached_data = await asyncio.to_thread(self.db.get_genius_data, clean_artist, clean_title)
+        if cached_data:
+            print(f"[INFO] Loaded annotations for '{track.title}' from cache")
+            track.genius_song_id = cached_data['genius_id']
+            track.annotations = cached_data['annotations']
+            track.primary_color = cached_data['primary_color']
+            track.secondary_color = cached_data['secondary_color']
+            return
+
+        if not self.is_available():
             return
 
         def _fetch_sync():
-            # Clean title/artist for better search results
-            clean_title = track.title.split('(')[0].split('-')[0].strip()
-            clean_artist = track.artist.split(',')[0].strip()
-            
             print(f"[DEBUG] Searching Genius for: {clean_title} by {clean_artist}")
             song = self.search_song(clean_title, clean_artist)
             
+            result = {
+                'song_id': None,
+                'annotations': None,
+                'primary_color': None,
+                'secondary_color': None
+            }
+
             if song:
-                # Debug song object
-                # print(f"[DEBUG] Song object type: {type(song)}")
                 # Try to get ID safely
                 song_id = None
                 if hasattr(song, 'id'):
@@ -167,28 +199,66 @@ class GeniusService:
                     song_id = song._body['id']
                 
                 if song_id:
-                    track.genius_song_id = song_id
+                    result['song_id'] = song_id
                     print(f"[INFO] Found Genius song ID: {song_id}")
-                    return self.get_annotations(song_id)
+                    
+                    # Get annotations
+                    result['annotations'] = self.get_annotations(song_id)
+
+                    # Get colors
+                    if hasattr(song, 'song_art_primary_color'):
+                        result['primary_color'] = song.song_art_primary_color
+                    elif hasattr(song, '_body'):
+                        result['primary_color'] = song._body.get('song_art_primary_color')
+
+                    if hasattr(song, 'song_art_secondary_color'):
+                        result['secondary_color'] = song.song_art_secondary_color
+                    elif hasattr(song, '_body'):
+                        result['secondary_color'] = song._body.get('song_art_secondary_color')
                 else:
                     print(f"[ERROR] Could not determine song ID from Genius result.")
             else:
                 print(f"[INFO] No Genius match for {track.title}")
-            return None
+            return result
 
-        # 1. Fetch annotations (Sync)
-        annotations = await asyncio.to_thread(_fetch_sync)
+        # 2. Fetch data (Sync)
+        data = await asyncio.to_thread(_fetch_sync)
         
-        if annotations:
-            # 2. Translate if available (Async)
-            if self.gemini_client:
-                 print(f"[INFO] Translating {len(annotations)} annotations...")
-                 # Process concurrently
-                 tasks = [self._translate_text(ann['text']) for ann in annotations]
-                 translated_texts = await asyncio.gather(*tasks)
-                 
-                 for i, trans_text in enumerate(translated_texts):
-                     annotations[i]['text'] = trans_text
+        if data and data['song_id']:
+            annotations = data['annotations']
             
-            track.annotations = annotations
-            print(f"[INFO] Fetched {len(annotations)} annotations for {track.title}")
+            if annotations:
+                # 3. Translate if available (Async)
+                if self.gemini_client:
+                     print(f"[INFO] Translating {len(annotations)} annotations...")
+                     try:
+                         # Process concurrently
+                         tasks = [self._translate_text(ann['text']) for ann in annotations]
+                         translated_texts = await asyncio.gather(*tasks)
+                         
+                         for i, trans_text in enumerate(translated_texts):
+                             annotations[i]['text'] = trans_text
+                     except Exception as e:
+                         print(f"[ERROR] Translation error: {e}")
+                
+                track.annotations = annotations
+                print(f"[INFO] Fetched {len(annotations)} annotations for {track.title}")
+
+            # Update colors
+            if data['primary_color']:
+                track.primary_color = data['primary_color']
+            if data['secondary_color']:
+                track.secondary_color = data['secondary_color']
+            
+            track.genius_song_id = data['song_id']
+
+            # 4. Save to Cache
+            await asyncio.to_thread(
+                self.db.save_genius_data,
+                clean_artist, 
+                clean_title, 
+                data['song_id'], 
+                annotations or [], 
+                data['primary_color'], 
+                data['secondary_color']
+            )

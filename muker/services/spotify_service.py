@@ -7,6 +7,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
 from muker.models.track import Track
+from muker.core.database import DatabaseManager
 
 
 class SpotifyService:
@@ -19,6 +20,7 @@ class SpotifyService:
         self._load_env_file()
         self._initialize_client()
         self._initialize_lyrics_api()
+        self.db = DatabaseManager()
 
     def _load_env_file(self):
         """Load environment variables from .env file."""
@@ -244,6 +246,12 @@ class SpotifyService:
         Returns:
             Lyrics data dict if found, None otherwise
         """
+        # 1. Check Cache
+        cached_lyrics = self.db.get_spotify_lyrics(track_id)
+        if cached_lyrics:
+            print(f"[INFO] Loaded lyrics for track {track_id} from cache")
+            return cached_lyrics
+
         if not self.lyrics_api_url:
             return None
 
@@ -266,6 +274,10 @@ class SpotifyService:
                 return None
 
             print(f"[INFO] Fetched lyrics for track {track_id} (format: {format})")
+            
+            # 2. Save to Cache
+            self.db.save_spotify_lyrics(track_id, lyrics_data)
+            
             return lyrics_data
 
         except ImportError:

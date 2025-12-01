@@ -53,8 +53,16 @@ class VisualizerWidget(Widget):
         width = self.size.width
         height = self.size.height
 
+        # Determine color from widget style or default
+        base_color = "cyan"
+        try:
+            if self.styles.color:
+                base_color = self.styles.color.rich_color.name
+        except:
+            pass
+
         if width == 0 or height == 0:
-            return Text("Visualizer", justify="center", style="bold cyan")
+            return Text("Visualizer", justify="center", style=f"bold {base_color}")
 
         # Get spectrum data
         spectrum = self.visualizer.get_spectrum(min(width, 64))
@@ -77,17 +85,17 @@ class VisualizerWidget(Widget):
             result = Text()
             result.append("\n" * (height // 2 - 1))
             result.append(" " * padding_title)
-            result.append(title, style="bold cyan")
+            result.append(title, style=f"bold {base_color}")
             result.append("\n")
             result.append(" " * padding_style)
-            result.append(style_text, style="dim cyan")
+            result.append(style_text, style=f"dim {base_color}")
             result.append("\n")
             result.append(" " * padding_help)
             result.append(help_text, style="dim")
             return result
 
         lines = []
-        bar_chars = [' ', '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█']
+        bar_chars = [' ', ' ', '▂', '▃', '▄', '▅', '▆', '▇', '█']
 
         # Create bars for each frequency bin
         for row in range(height):
@@ -99,13 +107,7 @@ class VisualizerWidget(Widget):
                 # Determine which character to use
                 if (height - row - 1) < bar_height:
                     char = '█'
-                    # Color based on frequency (low=blue, mid=green, high=red)
-                    if i < len(spectrum) // 3:
-                        color = "cyan"
-                    elif i < 2 * len(spectrum) // 3:
-                        color = "green"
-                    else:
-                        color = "red"
+                    color = base_color
                 else:
                     char = ' '
                     color = "white"
@@ -127,7 +129,7 @@ class VisualizerWidget(Widget):
 
         # Add style name in corner
         style_name = f" [{self.visualizer.get_style().value}] "
-        result.stylize("bold cyan", len(str(result)) - len(style_name), len(str(result)))
+        result.stylize(f"bold {base_color}", len(str(result)) - len(style_name), len(str(result)))
 
         return result
 

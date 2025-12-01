@@ -18,7 +18,7 @@ MainScreen {
 /* Visualizer Area (30%) */
 #visualizer-container {
     height: 30%;
-    border: double cyan;
+    border: double $primary;
     background: #0d1117;
     padding: 1;
 }
@@ -29,7 +29,7 @@ VisualizerWidget {
     content-align: center middle;
     text-style: bold;
     background: #0d1117;
-    color: cyan;
+    color: $primary;
 }
 
 /* Content Area (50%) */
@@ -40,7 +40,7 @@ VisualizerWidget {
 
 #library-panel {
     width: 40%;
-    border: solid green;
+    border: solid $secondary;
     background: #0d1117;
     padding: 1;
 }
@@ -55,14 +55,14 @@ LibraryBrowser {
 
 #playlist-panel {
     width: 60%;
-    border: solid yellow;
+    border: solid $primary;
     background: #0d1117;
     padding: 1;
 }
 
 #lyrics-container {
     width: 60%;
-    border: solid magenta;
+    border: solid $secondary;
     background: #0d1117;
     padding: 1;
 }
@@ -87,7 +87,7 @@ LyricsPanel {
 
 #playlist-title {
     text-style: bold;
-    color: $warning;
+    color: $secondary;
     margin-bottom: 1;
 }
 
@@ -105,7 +105,7 @@ PlaylistView {
 
 #playlist-title {
     text-style: bold;
-    color: yellow;
+    color: $secondary;
     background: #0d1117;
     margin-bottom: 1;
 }
@@ -124,21 +124,24 @@ ListView > ListItem {
 }
 
 ListView > ListItem:hover {
-    background: $primary-darken-1;
+    background: $primary;
+    color: #000000;
 }
 
 ListView > ListItem.-selected {
-    background: $primary-darken-2;
+    background: $secondary;
+    color: #ffffff;
 }
 
 ListView:focus > ListItem.-selected {
     background: $primary;
+    color: #ffffff;
 }
 
 /* Controls Area (20%) */
 #controls-container {
     height: 20%;
-    border: heavy magenta;
+    border: heavy $secondary;
     background: #0d1117;
     padding: 1;
 }
@@ -154,18 +157,11 @@ PlayerControls {
 
 /* Header and Footer */
 Header {
-    background: $primary-darken-2;
+    background: $primary;
+    color: white;
 }
 
 Footer {
-    background: $primary-darken-2;
-}
-
-/* Color overrides for better visibility */
-Screen.-dark-mode {
-    background: #0a0e1a;
-}
-
-Screen.-light-mode {
-    background: #f0f0f0;
+    background: $secondary;
+    color: white;
 }

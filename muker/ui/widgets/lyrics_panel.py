@@ -33,18 +33,19 @@ class LyricLine(Label):
     }
     """
 
-    def __init__(self, text: str, timestamp: float, annotation: Optional[str] = None):
+    def __init__(self, text: str, timestamp: float, annotations: Optional[List[str]] = None):
         super().__init__(text)
         self.text_content = text
         self.timestamp = timestamp
-        self.annotation = annotation
-        if annotation:
+        self.annotations = annotations or []
+        if self.annotations:
             self.add_class("has-annotation")
 
     def on_click(self) -> None:
         """Handle click event."""
-        if self.annotation:
-            self.app.push_screen(AnnotationPopup(self.text_content, self.annotation))
+        if self.annotations:
+            # Display only the first annotation found
+            self.app.push_screen(AnnotationPopup(self.text_content, self.annotations[0]))
 
 class LyricsPanel(Widget):
     """Widget for displaying synchronized lyrics."""
@@ -150,9 +151,12 @@ class LyricsPanel(Widget):
                     
                 time = parse_time(line_data.get('timeTag', '00:00'))
                 
-                line_widget = LyricLine(text, time)
+                # Initialize with empty annotations list
+                line_widget = LyricLine(text, time, annotations=[])
                 self.lines.append(line_widget)
                 await scroll.mount(line_widget)
+            
+            print(f"[DEBUG] Lyrics loaded. Synced: {self.is_synced}, Lines: {len(self.lines)}")
                 
         except Exception as e:
             print(f"[ERROR] Failed to load lyrics: {e}")
@@ -166,27 +170,80 @@ class LyricsPanel(Widget):
         await self.genius_service.enrich_track_with_annotations(track)
         
         if track.annotations:
-            # Map annotations to lines
-            # Simple matching: if fragment is in line text
-            # Doing this on the main thread via call_from_thread or similar is safest for UI updates
-            # But @work runs in a worker, so we need to be careful updating UI.
-            # Textual widgets are not thread safe, but @work allows calling app methods.
-            # Actually, better to schedule the update on the main loop.
-            
+            # Map annotations to lines safely on main thread
             self._apply_annotations(track.annotations)
+
+        # Update theme colors if available
+        if track.primary_color and track.secondary_color:
+            if hasattr(self.app, 'update_theme_colors'):
+                self.app.update_theme_colors(track.primary_color, track.secondary_color)
 
     def _apply_annotations(self, annotations: List[Dict[str, Any]]):
         """Apply annotations to lyric lines (Main Thread)."""
+        import re
+        import unicodedata
+        from difflib import SequenceMatcher
+
+        def clean_text(text: str) -> str:
+            # 1. Normalize Unicode
+            text = unicodedata.normalize('NFKC', text)
+            # 2. Remove non-alphanumeric characters (punctuation), keep whitespace
+            text = re.sub(r'[^\w\s]', '', text)
+            # 3. Collapse all whitespace to single space
+            text = re.sub(r'\s+', ' ', text)
+            return text.strip().lower()
+
         for line_widget in self.lines:
-            line_text = line_widget.text_content.lower()
+            # Normalize line text
+            line_clean = clean_text(line_widget.text_content)
+            if not line_clean:
+                continue
+            
+            matched = False
+            
             for ann in annotations:
-                fragment = ann['fragment'].lower()
-                # Basic matching logic
-                if fragment in line_text and len(fragment) > 3:
-                    line_widget.annotation = ann['text']
-                    line_widget.add_class("has-annotation")
-                    # Break to avoid overwriting with multiple annotations (simple v1)
+                raw_fragment = ann['fragment']
+                sub_fragments = raw_fragment.split('\n')
+                
+                # IMPORTANT: Also check the FULL fragment as a single block.
+                if len(sub_fragments) > 1:
+                    sub_fragments.append(raw_fragment)
+                
+                for sub in sub_fragments:
+                    sub_clean = clean_text(sub)
+                    
+                    if not sub_clean or len(sub_clean) < 2:
+                        continue
+                    
+                    # 1. Bidirectional Substring Match
+                    if sub_clean in line_clean or line_clean in sub_clean:
+                        matched = True
+                    
+                    # 2. Fuzzy Similarity Match
+                    elif SequenceMatcher(None, line_clean, sub_clean).ratio() > 0.55:
+                        matched = True
+                            
+                    # 3. Word Subset Match
+                    else:
+                        line_tokens = line_clean.split()
+                        sub_tokens = set(sub_clean.split())
+                        
+                        if len(line_tokens) >= 2:
+                            match_count = sum(1 for t in line_tokens if t in sub_tokens)
+                            subset_ratio = match_count / len(line_tokens)
+                            
+                            if subset_ratio >= 0.55:
+                                matched = True
+
+                    if matched:
+                        line_widget.annotations.append(ann['text'])
+                        break 
+                
+                if matched:
                     break
+            
+            if matched:
+                line_widget.add_class("has-annotation")
 
     def _update_active_line(self):
         """Highlight the current line."""
