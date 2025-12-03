@@ -1,10 +1,10 @@
-"""Lyrics panel widget for displaying synchronized lyrics."""
+"Lyrics panel widget for displaying synchronized lyrics."
 
 from textual.widget import Widget
 from textual.widgets import Label
 from textual.containers import VerticalScroll
 from textual import work
-from typing import Optional, List, Dict, Any
+from typing import Optional, List, Dict, Any, Callable
 from muker.core.player import AudioPlayer
 from muker.core.playlist import PlaylistManager
 from muker.services.genius_service import GeniusService
@@ -33,19 +33,20 @@ class LyricLine(Label):
     }
     """
 
-    def __init__(self, text: str, timestamp: float, annotations: Optional[List[str]] = None):
+    def __init__(self, text: str, timestamp: float, annotations: Optional[List[Dict[str, Any]]] = None, on_click_callback: Optional[Callable] = None):
         super().__init__(text)
         self.text_content = text
         self.timestamp = timestamp
         self.annotations = annotations or []
+        self.on_click_callback = on_click_callback
         if self.annotations:
             self.add_class("has-annotation")
 
     def on_click(self) -> None:
         """Handle click event."""
-        if self.annotations:
+        if self.annotations and self.on_click_callback:
             # Display only the first annotation found
-            self.app.push_screen(AnnotationPopup(self.text_content, self.annotations[0]))
+            self.on_click_callback(self.text_content, self.annotations[0])
 
 class LyricsPanel(Widget):
     """Widget for displaying synchronized lyrics."""
@@ -151,8 +152,13 @@ class LyricsPanel(Widget):
                     
                 time = parse_time(line_data.get('timeTag', '00:00'))
                 
-                # Initialize with empty annotations list
-                line_widget = LyricLine(text, time, annotations=[])
+                # Initialize with empty annotations list and callback
+                line_widget = LyricLine(
+                    text, 
+                    time, 
+                    annotations=[],
+                    on_click_callback=self.on_annotation_click
+                )
                 self.lines.append(line_widget)
                 await scroll.mount(line_widget)
             
@@ -236,7 +242,8 @@ class LyricsPanel(Widget):
                                 matched = True
 
                     if matched:
-                        line_widget.annotations.append(ann['text'])
+                        # Store the full annotation dictionary
+                        line_widget.annotations.append(ann)
                         break 
                 
                 if matched:
@@ -257,16 +264,12 @@ class LyricsPanel(Widget):
             else:
                 break
         
-        # Debug position vs first few lines
-        # print(f"[DEBUG] Pos: {position:.2f}, ActiveIdx: {active_idx}")
-        
         # Update classes
         for i, line in enumerate(self.lines):
             if i == active_idx:
                 if not line.has_class("active"):
                     line.add_class("active")
                     line.refresh() # Force refresh
-                    print(f"[DEBUG] Set active line {i}: {line.classes}")
                     # Scroll to keep in view
                     try:
                         line.scroll_visible(animate=True, top=False, duration=0.5)
@@ -276,3 +279,30 @@ class LyricsPanel(Widget):
                 if line.has_class("active"):
                     line.remove_class("active")
                     line.refresh() # Force refresh
+
+    def on_annotation_click(self, title: str, annotation: Dict[str, Any]):
+        """Handle annotation click."""
+        # Show loading state initially or existing translation
+        initial_text = annotation.get('translation', 'Loading translation...')
+        if not annotation.get('translation'):
+             # Fallback to raw text if we want to show something while loading? 
+             # Or just "Loading..."
+             pass
+             
+        popup = AnnotationPopup(title, initial_text)
+        self.app.push_screen(popup)
+        
+        if not annotation.get('translation'):
+            self._translate_and_show(popup, annotation)
+
+    @work(exclusive=False)
+    async def _translate_and_show(self, popup: AnnotationPopup, annotation: Dict[str, Any]):
+        """Fetch translation and update popup."""
+        current_track = self.playlist.get_current_track()
+        if not current_track:
+            return
+            
+        translated_text = await self.genius_service.translate_single_annotation(current_track, annotation)
+        
+        # Update popup UI directly since we are in the async event loop
+        popup.update_content(translated_text)

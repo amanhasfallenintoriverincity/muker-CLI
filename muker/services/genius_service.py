@@ -138,15 +138,25 @@ class GeniusService:
             print(f"[ERROR] Failed to fetch annotations: {e}")
             return []
 
-    async def _translate_text(self, text: str) -> str:
-        """Translate text to Korean using Gemini."""
+    async def _translate_text(self, text: str, artist: str = "", title: str = "", fragment: str = "") -> str:
+        """Translate text to Korean using Gemini with context."""
         if not self.gemini_client:
             return text
         
+        prompt = (
+            f"Song: {title} - {artist}\n"
+            f"Lyrics: {fragment}\n"
+            f"Annotation: {text}\n\n"
+            f"Please translate this annotation into Korean. The annotation explains the meaning of the lyrics.\n"
+            f"- Translate naturally and fluently.\n"
+            f"- Consider the context of the song and lyrics.\n"
+            f"- Only output the Korean translation."
+        )
+
         try:
             response = await self.gemini_client.aio.models.generate_content(
-                model='gemini-flash-lite-latest',
-                contents=f"Translate the following music annotation to Korean naturally. Keep the tone informative and easy to understand. Output ONLY the translated text:\n\n{text}"
+                model='gemini-flash-latest',
+                contents=prompt
             )
             return response.text.strip()
         except Exception as e:
@@ -227,22 +237,8 @@ class GeniusService:
         if data and data['song_id']:
             annotations = data['annotations']
             
-            if annotations:
-                # 3. Translate if available (Async)
-                if self.gemini_client:
-                     print(f"[INFO] Translating {len(annotations)} annotations...")
-                     try:
-                         # Process concurrently
-                         tasks = [self._translate_text(ann['text']) for ann in annotations]
-                         translated_texts = await asyncio.gather(*tasks)
-                         
-                         for i, trans_text in enumerate(translated_texts):
-                             annotations[i]['text'] = trans_text
-                     except Exception as e:
-                         print(f"[ERROR] Translation error: {e}")
-                
-                track.annotations = annotations
-                print(f"[INFO] Fetched {len(annotations)} annotations for {track.title}")
+            track.annotations = annotations
+            print(f"[INFO] Fetched {len(annotations)} annotations for {track.title}")
 
             # Update colors
             if data['primary_color']:
@@ -262,3 +258,43 @@ class GeniusService:
                 data['primary_color'], 
                 data['secondary_color']
             )
+
+    async def translate_single_annotation(self, track: Track, annotation: Dict[str, Any]) -> str:
+        """Translate a single annotation and update cache.
+        
+        Args:
+            track: The track object containing the annotation
+            annotation: The specific annotation dictionary to translate
+            
+        Returns:
+            The translated text
+        """
+        # Return existing translation if available
+        if 'translation' in annotation:
+            return annotation['translation']
+
+        original_text = annotation.get('text', '')
+        fragment = annotation.get('fragment', '')
+        if not original_text:
+            return ""
+            
+        translated_text = await self._translate_text(original_text, track.artist, track.title, fragment)
+        
+        # Update in-memory object
+        annotation['translation'] = translated_text
+        
+        # Update cache
+        clean_title = track.title.split('(')[0].split('-')[0].strip()
+        clean_artist = track.artist.split(',')[0].strip()
+        
+        await asyncio.to_thread(
+            self.db.save_genius_data,
+            clean_artist,
+            clean_title,
+            track.genius_song_id,
+            track.annotations, # This list now contains the updated annotation dict
+            track.primary_color,
+            track.secondary_color
+        )
+        
+        return translated_text

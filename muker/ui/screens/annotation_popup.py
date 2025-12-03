@@ -65,3 +65,11 @@ class AnnotationPopup(ModalScreen):
     def on_button_pressed(self, event: Button.Pressed) -> None:
         if event.button.id == "close-btn":
             self.dismiss()
+
+    def update_content(self, new_content: str) -> None:
+        """Update the annotation content dynamically."""
+        self.annotation_content = new_content
+        try:
+            self.query_one("#annotation-text", Static).update(new_content)
+        except Exception:
+            pass
